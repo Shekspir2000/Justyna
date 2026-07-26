@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const bookingUrl =
-  "https://www.znanylekarz.pl/justyna-jasinska-2/fizjoterapeuta/krakow#profile-reviews";
+  "https://www.znanylekarz.pl/justyna-jasinska-2/fizjoterapeuta/krakow";
 
 const navItems = [
   ["O mnie", "#o-mnie"],
