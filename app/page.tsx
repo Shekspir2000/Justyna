@@ -129,7 +129,7 @@ export default function Home() {
         </div>
         <div className="hero-media reveal">
           <Image
-            src="/images/justyna-hero.jpg"
+            src="/images/hero-img-6091.jpg"
             alt="Justyna Jasińska, fizjoterapeutka pediatryczna i stomatologiczna"
             width={1200}
             height={1800}
