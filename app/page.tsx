@@ -159,8 +159,8 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-photo reveal">
             <Image
-              src="/images/justyna-praca.jpg"
-              alt="Justyna Jasińska podczas terapii manualnej"
+              src="/images/about-portrait-38.jpg"
+              alt="Portret Justyny Jasińskiej"
               width={1066}
               height={1600}
               sizes="(min-width: 820px) 42vw, 100vw"
@@ -215,9 +215,9 @@ export default function Home() {
         <div className="offer-feature reveal">
           <div>
             <p className="eyebrow">Pediatria na pierwszym miejscu</p>
-            <h3>Kiedy rodzic nie wie, czy “tak ma być”, potrzebuje spokojnej odpowiedzi.</h3>
+            <h3>Kiedy nie masz pewności, czy rozwój dziecka przebiega prawidłowo, warto usłyszeć spokojną i konkretną odpowiedź.</h3>
             <p>
-              Na wizycie sprawdzamy rozwój dziecka, napięcia, asymetrie, karmienie, komfort leżenia, obracania i pierwszych wzorców ruchu. Rodzic wychodzi z gabinetu z jasnym planem, nie z listą straszących pojęć.
+              Podczas wizyty dokładnie przyglądam się napięciom, asymetrii, karmieniu, komfortowi leżenia, obracania oraz pierwszym wzorcom ruchu. Tłumaczę wszystko prostym językiem, aby rodzic wyszedł z gabinetu z jasnym planem działania, a nie z poczuciem niepokoju i listą trudnych pojęć.
             </p>
           </div>
           <Image
