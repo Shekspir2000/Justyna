@@ -431,17 +431,27 @@ h3 {
 }
 
 .offer-feature div {
-  padding: clamp(24px, 5vw, 54px);
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: clamp(30px, 5vw, 64px);
 }
 
-.offer-feature h3 {
+.offer-feature .eyebrow {
+  margin-bottom: 0;
+  font-size: 1.02rem;
+}
+
+.offer-feature h3,
+.offer-feature p:not(.eyebrow) {
   color: #fffaf8;
-  font-size: clamp(1.7rem, 4vw, 3.2rem);
+  font-size: clamp(1.12rem, 1.75vw, 1.42rem);
+  line-height: 1.45;
 }
 
 .offer-feature p:not(.eyebrow) {
   color: rgba(255, 250, 248, 0.82);
-  font-size: 1.05rem;
+  margin-bottom: 0;
 }
 
 .offer-feature img {
@@ -779,7 +789,10 @@ h3 {
     align-items: center;
   }
 
-  .offer-feature,
+  .offer-feature {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.86fr);
+  }
+
   .tmj-band {
     grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
   }
