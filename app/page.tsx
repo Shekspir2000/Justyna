@@ -1,11 +1,12 @@
 import Image from "next/image";
 
-const bookingUrl = "[LINK_DO_ZNANYLEKARZ]";
+const bookingUrl =
+  "https://www.znanylekarz.pl/justyna-jasinska-2/fizjoterapeuta/krakow#profile-reviews";
 
 const navItems = [
   ["O mnie", "#o-mnie"],
   ["Oferta", "#oferta"],
-  ["Umów się", "#umow-sie"],
+  ["Umów się", bookingUrl],
   ["Współpraca", "#wspolpraca"],
   ["Sklep", "#sklep"],
   ["Kontakt", "#kontakt"],
@@ -254,7 +255,7 @@ export default function Home() {
           <p>
             Przy bruksizmie, klikaniu, bólu twarzy czy napięciu mięśni żucia patrzę także na szyję, oddech, postawę, stres i codzienne nawyki. Celem jest nie tylko rozluźnić tkanki, ale pomóc Ci zrozumieć, dlaczego napięcie wraca.
           </p>
-          <a className="secondary-button light" href="#umow-sie">
+          <a className="secondary-button light" href={bookingUrl}>
             Umów konsultację TMJ
           </a>
         </div>
@@ -285,7 +286,7 @@ export default function Home() {
           <a className="primary-button" href={bookingUrl}>
             Umów się na wizytę
           </a>
-          <small>Link do podmiany: [LINK_DO_ZNANYLEKARZ]</small>
+          <small>Rezerwacja odbywa się przez profil ZnanyLekarz.</small>
         </div>
       </section>
 
@@ -346,7 +347,7 @@ export default function Home() {
             Napisz krótko, co Cię niepokoi. Formularz nie zastępuje wizyty, ale pomaga ustalić, czy fizjoterapia pediatryczna, stomatologiczna lub współpraca z logopedą będzie dobrym kierunkiem.
           </p>
           <div className="contact-list" aria-label="Dane kontaktowe">
-            <a href={bookingUrl}>ZnanyLekarz: [LINK_DO_ZNANYLEKARZ]</a>
+            <a href={bookingUrl}>ZnanyLekarz: profil Justyny Jasińskiej</a>
             <a href="tel:+48000000000">Telefon: [TELEFON]</a>
             <a href="mailto:kontakt@justynajasinskafizjo.pl">E-mail: [E-MAIL]</a>
             <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram: [INSTAGRAM]</a>
