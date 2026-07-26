@@ -177,7 +177,17 @@ main {
 }
 
 .hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+  gap: 18px;
   max-width: 790px;
+}
+
+.hero-copy .eyebrow {
+  margin-bottom: 0;
+  font-size: 1.22rem;
 }
 
 .eyebrow {
@@ -207,7 +217,7 @@ h3 {
 
 h1 {
   max-width: 880px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   font-size: clamp(1.42rem, 2.8vw, 2.25rem);
   line-height: 1.18;
 }
@@ -224,6 +234,7 @@ h3 {
 
 .lead {
   max-width: 760px;
+  margin-bottom: 0;
   color: rgba(65, 52, 77, 0.82);
   font-size: clamp(1.42rem, 2.8vw, 2.25rem);
   line-height: 1.18;
@@ -233,7 +244,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin: 28px 0;
+  margin: 10px 0 0;
 }
 
 .trust-strip {

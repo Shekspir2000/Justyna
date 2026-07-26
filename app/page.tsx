@@ -110,9 +110,9 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy reveal">
           <p className="eyebrow">Fizjoterapia dzieci, niemowląt i TMJ w Krakowie</p>
-          <h1>Pomagam znaleźć przyczynę problemu, nie tylko łagodzić objawy.</h1>
+          <h1>Pomagam znaleźć przyczynę problemu, a nie tylko łagodzić objawy.</h1>
           <p className="lead">
-            Łączę fizjoterapię pediatryczną, stomatologiczną i terapię manualną ze współpracą logopedyczną, aby wspierać prawidłowy rozwój dziecka oraz poprawiać komfort pacjentów z napięciami, bruksizmem i problemami stawu skroniowo-żuchwowego.
+            Łączę fizjoterapię pediatryczną, stomatologiczną, terapię manualną i współpracę z logopedą, aby wspierać prawidłowy rozwój dziecka oraz komfort funkcjonowania pacjentów z napięciami, bruksizmem i problemami stawu skroniowo-żuchwowego.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href={bookingUrl}>
