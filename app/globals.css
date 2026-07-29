@@ -793,6 +793,7 @@ h3 {
 
 .booking-inner h2 {
   color: #fffaf8;
+  margin-bottom: clamp(30px, 3vw, 42px);
 }
 
 .booking-inner p {
