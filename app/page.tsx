@@ -46,51 +46,30 @@ const credentialItems = [
   },
 ];
 
-const offerItems = [
+const offerGroups = [
   {
-    title: "Fizjoterapia niemowląt",
-    label: "Najważniejszy obszar",
-    text: "Ocena napięcia, asymetrii, preferencji ułożeniowych, trudności z karmieniem i rozwoju ruchowego. Spokojna praca z dzieckiem oraz jasne wskazówki dla rodzica.",
+    title: "Niemowlęta i małe dzieci",
+    label: "Najczęstszy obszar pracy",
+    text: "Spokojna ocena rozwoju, napięć, asymetrii, karmienia, komfortu leżenia, obracania i pierwszych wzorców ruchu.",
+    items: ["fizjoterapia niemowląt", "kontrola rozwoju małego dziecka", "zalecenia zrozumiałe dla rodzica"],
   },
   {
-    title: "Fizjoterapia dzieci",
-    label: "Rozwój i ruch",
-    text: "Wsparcie dzieci z trudnościami ruchowymi, napięciami, opóźnieniami wzorców motorycznych i potrzebą mądrej kontroli rozwoju.",
+    title: "Dzieci i wady postawy",
+    label: "Rozwój, ruch i nawyki",
+    text: "Praca z trudnościami ruchowymi, napięciami, opóźnieniami wzorców motorycznych oraz postawą starszych dzieci.",
+    items: ["fizjoterapia dzieci", "wady postawy", "ćwiczenia możliwe do wdrożenia w domu"],
   },
   {
-    title: "Wady postawy",
-    label: "Starsze dzieci",
-    text: "Analiza postawy, nawyków, ustawienia miednicy, stóp i kręgosłupa. Terapia połączona z ćwiczeniami, które rodzina rozumie i potrafi wdrożyć.",
-  },
-  {
-    title: "Fizjoterapia stomatologiczna / TMJ",
-    label: "Staw skroniowo-żuchwowy",
-    text: "Praca z napięciami twarzy, szyi i obręczy barkowej, ograniczeniami ruchu żuchwy, klikaniem, bólem i przeciążeniami w obrębie stawu.",
-  },
-  {
-    title: "Bruksizm i napięcia mięśni żucia",
-    label: "Komfort na co dzień",
-    text: "Terapia mięśni żucia, edukacja o zaciskaniu zębów, oddechu i napięciu. Wsparcie dla osób z bólami głowy, twarzy i szyi.",
-  },
-  {
-    title: "Przygotowanie do leczenia ortodontycznego",
-    label: "Przed aparatem",
-    text: "Ocena funkcji żuchwy, napięć i kompensacji, aby leczenie stomatologiczne i ortodontyczne miało lepsze warunki funkcjonalne.",
-  },
-  {
-    title: "Przygotowanie przed podcięciem wędzidełka",
-    label: "Z logopedą",
-    text: "Ocena napięć i praca manualna przed zabiegiem oraz zalecenia, które pomagają przygotować tkanki i proces terapeutyczny.",
+    title: "Staw skroniowo-żuchwowy i bruksizm",
+    label: "Fizjoterapia stomatologiczna / TMJ",
+    text: "Terapia napięć mięśni żucia, twarzy, szyi i obręczy barkowej przy zaciskaniu zębów, bólu, klikaniu lub przeciążeniu żuchwy.",
+    items: ["bruksizm i napięcia mięśni żucia", "fizjoterapia stomatologiczna", "przygotowanie do leczenia ortodontycznego"],
   },
   {
     title: "Współpraca z logopedą",
     label: "Proces zespołowy",
-    text: "Łączenie perspektywy fizjoterapeutycznej i logopedycznej u dzieci, szczególnie przy trudnościach karmienia, napięciach i funkcji jamy ustnej.",
-  },
-  {
-    title: "Szkolenia dla gabinetów logopedycznych",
-    label: "Dla specjalistów",
-    text: "Wewnętrzne szkolenia o tym, kiedy fizjoterapeuta może pomóc w procesie logopedycznym i jak budować wspólną ścieżkę terapii.",
+    text: "Wsparcie dzieci przed podcięciem wędzidełka, przy trudnościach karmienia, napięciach i funkcji jamy ustnej oraz szkolenia dla gabinetów logopedycznych.",
+    items: ["przygotowanie przed podcięciem wędzidełka", "współpraca fizjoterapeuty i logopedy", "szkolenia dla gabinetów logopedycznych"],
   },
 ];
 
@@ -271,12 +250,15 @@ export default function Home() {
       <section className="section offer-section" id="oferta">
         <div className="section-heading reveal">
           <p className="eyebrow">Oferta</p>
-          <h2>Najmocniej wspieram niemowlęta i małe dzieci, a obok tego pacjentów z napięciami żuchwy, bruksizmem i TMJ.</h2>
+          <h2>Wybierz obszar, z którym chcesz przyjść na wizytę.</h2>
+          <p className="section-lead">
+            Najmocniej wspieram niemowlęta i małe dzieci. Pracuję też z wadami postawy, napięciami żuchwy, bruksizmem, TMJ oraz w procesach prowadzonych wspólnie z logopedą.
+          </p>
         </div>
         <div className="offer-feature reveal">
           <div>
             <p className="eyebrow">Pediatria na pierwszym miejscu</p>
-            <h3>Kiedy nie masz pewności, czy rozwój dziecka przebiega prawidłowo, warto usłyszeć spokojną i konkretną odpowiedź.</h3>
+            <h3>Jeśli nie masz pewności, czy rozwój dziecka przebiega prawidłowo, zaczynamy od spokojnego sprawdzenia sytuacji.</h3>
             <p>
               Podczas wizyty dokładnie przyglądam się napięciom, asymetrii, karmieniu, komfortowi leżenia, obracania oraz pierwszym wzorcom ruchu. Tłumaczę wszystko prostym językiem, aby rodzic wyszedł z gabinetu z jasnym planem działania, a nie z poczuciem niepokoju i listą trudnych pojęć.
             </p>
@@ -289,12 +271,17 @@ export default function Home() {
             sizes="(min-width: 820px) 50vw, 100vw"
           />
         </div>
-        <div className="offer-grid">
-          {offerItems.map((item) => (
-            <article className="offer-card reveal" key={item.title}>
+        <div className="offer-paths">
+          {offerGroups.map((item) => (
+            <article className="offer-path reveal" key={item.title}>
               <span>{item.label}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
+              <ul>
+                {item.items.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
