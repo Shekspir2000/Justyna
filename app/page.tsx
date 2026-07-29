@@ -355,13 +355,9 @@ export default function Home() {
         <div className="booking-inner reveal">
           <p className="eyebrow">Rezerwacja</p>
           <h2>Umów wizytę przez ZnanyLekarz.</h2>
-          <p>
-            Na tym etapie strona prowadzi do zewnętrznego profilu rezerwacji. Nie ma płatności online ani własnego systemu zapisów.
-          </p>
           <a className="primary-button" href={bookingUrl}>
             Umów się na wizytę
           </a>
-          <small>Rezerwacja odbywa się przez profil ZnanyLekarz.</small>
         </div>
       </section>
 
