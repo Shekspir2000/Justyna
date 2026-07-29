@@ -8,7 +8,7 @@ const navItems = [
   ["Oferta", "#oferta"],
   ["Umów się", bookingUrl],
   ["Współpraca", "#wspolpraca"],
-  ["Sklep", "#sklep"],
+  ["Sklep", null],
   ["Kontakt", "#kontakt"],
 ];
 
@@ -94,11 +94,23 @@ const processSteps = [
   },
 ];
 
-const audience = [
-  ["Mama niemowlęcia lub małego dziecka", "Chcesz sprawdzić rozwój, napięcie, asymetrię, karmienie albo po prostu zrozumieć, czy wszystko idzie w dobrą stronę."],
-  ["Rodzic starszego dziecka z wadą postawy", "Szukasz spokojnej oceny, sensownego planu i ćwiczeń, które nie będą kolejnym źródłem stresu w domu."],
-  ["Osoba z bruksizmem lub problemami TMJ", "Zaciskasz zęby, boli Cię żuchwa, szyja albo głowa i potrzebujesz wyjaśnienia, skąd bierze się napięcie."],
-  ["Logopeda lub gabinet logopedyczny", "Chcesz włączyć perspektywę fizjoterapeutyczną do procesu terapii dzieci i lepiej rozumieć napięcia oraz funkcję."],
+const cooperationTopics = [
+  {
+    title: "Kiedy włączyć fizjoterapeutę",
+    text: "Wskazówki, przy których objawach i trudnościach dziecka warto poszerzyć terapię logopedyczną o ocenę fizjoterapeutyczną.",
+  },
+  {
+    title: "Napięcia twarzy, szyi i tułowia",
+    text: "Praktyczne spojrzenie na to, jak napięcie w ciele może wpływać na karmienie, funkcję jamy ustnej i przebieg terapii.",
+  },
+  {
+    title: "Wędzidełko i przygotowanie do zabiegu",
+    text: "Omówienie pracy przed podcięciem wędzidełka oraz po zabiegu, z uwzględnieniem zaleceń dla rodzica.",
+  },
+  {
+    title: "Spójny plan dla rodzica",
+    text: "Ułożenie prostego języka komunikacji i wspólnych zaleceń, aby rodzic wiedział, co robić między wizytami.",
+  },
 ];
 
 const reviews = [
@@ -137,11 +149,17 @@ export default function Home() {
           <small>Fizjoterapia pediatryczna i stomatologiczna</small>
         </a>
         <nav className="desktop-nav" aria-label="Sekcje strony">
-          {navItems.map(([label, href]) => (
-            <a key={label} href={href}>
-              {label}
-            </a>
-          ))}
+          {navItems.map(([label, href]) =>
+            href ? (
+              <a key={label} href={href}>
+                {label}
+              </a>
+            ) : (
+              <span key={label} aria-disabled="true">
+                {label}
+              </span>
+            ),
+          )}
         </nav>
         <a className="header-cta" href={bookingUrl}>
           Umów się
@@ -355,21 +373,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section audience-section">
-        <div className="section-heading reveal">
-          <p className="eyebrow">Dla kogo</p>
-          <h2>Ta strona jest dla osób, które chcą zrozumieć problem, a nie tylko dostać szybkie ćwiczenie.</h2>
-        </div>
-        <div className="audience-grid">
-          {audience.map(([title, text]) => (
-            <article className="audience-card reveal" key={title}>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="booking-section" id="umow-sie">
         <div className="booking-inner reveal">
           <p className="eyebrow">Rezerwacja</p>
@@ -385,36 +388,23 @@ export default function Home() {
       </section>
 
       <section className="section cooperation-section" id="wspolpraca">
-        <div className="cooperation-copy reveal">
+        <div className="cooperation-heading reveal">
           <p className="eyebrow">Współpraca</p>
-          <h2>Dla logopedów i gabinetów logopedycznych.</h2>
-          <p>
+          <h2>Wsparcie dla logopedów i gabinetów logopedycznych.</h2>
+          <p className="section-lead">
             Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci. Pokazuję, kiedy warto włączyć fizjoterapię, jak czytać napięcia i jak planować wspólne działania.
           </p>
           <a className="secondary-button" href="#kontakt">
             Zapytaj o współpracę
           </a>
         </div>
-        <div className="cooperation-panel reveal">
-          <h3>Tematy współpracy</h3>
-          <ul>
-            <li>napięcia w obrębie twarzy, szyi i tułowia u dzieci,</li>
-            <li>trudności karmienia i przygotowanie przed podcięciem wędzidełka,</li>
-            <li>wspólne prowadzenie procesu terapeutycznego,</li>
-            <li>komunikacja zaleceń dla rodzica prostym językiem.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="shop-section" id="sklep">
-        <div className="section shop-inner reveal">
-          <div>
-            <p className="eyebrow">Sklep</p>
-            <h2>Wkrótce: e-booki, webinary i materiały edukacyjne dla rodziców.</h2>
-          </div>
-          <p>
-            Sekcja jest przygotowana pod przyszłą rozbudowę. Na razie bez koszyka, płatności i zakupów online.
-          </p>
+        <div className="cooperation-topics">
+          {cooperationTopics.map((topic) => (
+            <article className="cooperation-topic reveal" key={topic.title}>
+              <h3>{topic.title}</h3>
+              <p>{topic.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
