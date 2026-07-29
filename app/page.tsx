@@ -351,28 +351,6 @@ export default function Home() {
         </a>
       </section>
 
-      <section className="tmj-band">
-        <div className="tmj-image reveal">
-          <Image
-            src="/images/tmj-edukacja.jpg"
-            alt="Edukacja pacjenta w fizjoterapii stomatologicznej"
-            width={1000}
-            height={1500}
-            sizes="(min-width: 820px) 50vw, 100vw"
-          />
-        </div>
-        <div className="tmj-copy reveal">
-          <p className="eyebrow">Fizjoterapia stomatologiczna</p>
-          <h2>Żuchwa rzadko działa w izolacji.</h2>
-          <p>
-            Przy bruksizmie, klikaniu, bólu twarzy czy napięciu mięśni żucia patrzę także na szyję, oddech, postawę, stres i codzienne nawyki. Celem jest nie tylko rozluźnić tkanki, ale pomóc Ci zrozumieć, dlaczego napięcie wraca.
-          </p>
-          <a className="secondary-button light" href={bookingUrl}>
-            Umów konsultację TMJ
-          </a>
-        </div>
-      </section>
-
       <section className="booking-section" id="umow-sie">
         <div className="booking-inner reveal">
           <p className="eyebrow">Rezerwacja</p>
