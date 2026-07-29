@@ -266,8 +266,8 @@ export default function Home() {
           <Image
             src="/images/offer-img-5205.jpg"
             alt="Delikatna praca manualna w gabinecie fizjoterapii"
-            width={1800}
-            height={1350}
+            width={1350}
+            height={1800}
             sizes="(min-width: 820px) 50vw, 100vw"
           />
         </div>
