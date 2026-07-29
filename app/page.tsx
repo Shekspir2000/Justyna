@@ -398,13 +398,33 @@ export default function Home() {
             Zapytaj o współpracę
           </a>
         </div>
-        <div className="cooperation-topics">
-          {cooperationTopics.map((topic) => (
-            <article className="cooperation-topic reveal" key={topic.title}>
-              <h3>{topic.title}</h3>
-              <p>{topic.text}</p>
-            </article>
-          ))}
+        <div className="cooperation-content">
+          <div className="cooperation-photos reveal" aria-label="Zdjęcia ze szkolenia i pracy manualnej">
+            <Image
+              className="cooperation-photo-main"
+              src="/images/cooperation-training-6978.jpg"
+              alt="Justyna Jasińska podczas szkolenia z pracy manualnej w obrębie twarzy i żuchwy"
+              width={1050}
+              height={1400}
+              sizes="(min-width: 820px) 34vw, 100vw"
+            />
+            <Image
+              className="cooperation-photo-side"
+              src="/images/cooperation-training-6958.jpg"
+              alt="Obserwacja technik manualnych podczas szkolenia dla specjalistów"
+              width={1050}
+              height={1400}
+              sizes="(min-width: 820px) 22vw, 50vw"
+            />
+          </div>
+          <div className="cooperation-topics">
+            {cooperationTopics.map((topic) => (
+              <article className="cooperation-topic reveal" key={topic.title}>
+                <h3>{topic.title}</h3>
+                <p>{topic.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
