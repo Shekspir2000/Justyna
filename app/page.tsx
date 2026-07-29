@@ -264,7 +264,7 @@ export default function Home() {
             </p>
           </div>
           <Image
-            src="/images/offer-img-5205.jpg"
+            src="/images/offer-img-5205-clear.jpg"
             alt="Delikatna praca manualna w gabinecie fizjoterapii"
             width={1350}
             height={1800}
