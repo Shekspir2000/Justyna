@@ -170,10 +170,12 @@ main {
 
 .hero {
   display: grid;
-  gap: 34px;
+  gap: clamp(28px, 5vw, 70px);
   align-items: center;
   min-height: calc(100svh - 76px);
-  padding: clamp(34px, 7vw, 92px) clamp(18px, 5vw, 72px) 42px;
+  border-bottom: 1px solid rgba(65, 52, 77, 0.08);
+  background: linear-gradient(90deg, rgba(225, 202, 196, 0.34), rgba(255, 250, 248, 0.94) 44%, rgba(255, 250, 248, 0.72));
+  padding: clamp(42px, 7vw, 92px) clamp(18px, 5vw, 72px) clamp(42px, 5vw, 62px);
 }
 
 .hero-copy {
@@ -181,13 +183,17 @@ main {
   flex-direction: column;
   justify-content: center;
   align-self: stretch;
-  gap: 18px;
-  max-width: 790px;
+  gap: clamp(14px, 2vw, 24px);
+  max-width: 760px;
 }
 
 .hero-copy .eyebrow {
   margin-bottom: 0;
-  font-size: 1.22rem;
+  max-width: 660px;
+  color: var(--rose);
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  line-height: 1.35;
+  text-transform: none;
 }
 
 .eyebrow {
@@ -218,8 +224,8 @@ h3 {
 h1 {
   max-width: 880px;
   margin-bottom: 0;
-  font-size: clamp(1.42rem, 2.8vw, 2.25rem);
-  line-height: 1.18;
+  font-size: clamp(2.5rem, 5.1vw, 4.35rem);
+  line-height: 1.03;
 }
 
 h2 {
@@ -233,39 +239,39 @@ h3 {
 }
 
 .lead {
-  max-width: 760px;
+  max-width: 680px;
   margin-bottom: 0;
   color: rgba(65, 52, 77, 0.82);
-  font-size: clamp(1.42rem, 2.8vw, 2.25rem);
-  line-height: 1.18;
+  font-size: clamp(1.05rem, 1.55vw, 1.28rem);
+  line-height: 1.58;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin: 10px 0 0;
+  margin: 4px 0 0;
 }
 
 .trust-strip {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
-  margin: 0;
+  margin: 2px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .trust-strip li {
-  min-height: 72px;
+  min-height: 54px;
   display: flex;
   align-items: center;
-  border: 1px solid rgba(65, 52, 77, 0.13);
+  border: 1px solid rgba(155, 91, 84, 0.18);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.48);
-  padding: 14px;
+  background: rgba(255, 255, 255, 0.58);
+  padding: 12px 14px;
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 800;
   line-height: 1.24;
 }
@@ -275,7 +281,8 @@ h3 {
   align-self: stretch;
   min-height: 520px;
   overflow: hidden;
-  border-radius: 10px;
+  border: 1px solid rgba(65, 52, 77, 0.1);
+  border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
@@ -763,7 +770,6 @@ h3 {
 }
 
 @media (min-width: 640px) {
-  .trust-strip,
   .process-grid,
   .audience-grid,
   .review-grid {
@@ -782,6 +788,10 @@ h3 {
 
   .hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.74fr);
+  }
+
+  .trust-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .intro-band {

@@ -13,10 +13,9 @@ const navItems = [
 ];
 
 const trustItems = [
-  "10+ lat doświadczenia",
-  "terapeuta manualny IFOMPT",
-  "fizjoterapia dzieci i niemowląt",
-  "fizjoterapia stomatologiczna",
+  "niemowlęta i małe dzieci",
+  "TMJ, bruksizm i napięcia",
+  "współpraca z logopedą",
 ];
 
 const offerItems = [
@@ -109,7 +108,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy reveal">
-          <p className="eyebrow">Fizjoterapia dzieci, niemowląt i TMJ w Krakowie</p>
+          <p className="eyebrow">Fizjoterapia niemowląt, dzieci i stawu skroniowo-żuchwowego w Krakowie</p>
           <h1>Pomagam znaleźć przyczynę problemu, a nie tylko łagodzić objawy.</h1>
           <p className="lead">
             Łączę fizjoterapię pediatryczną, stomatologiczną, terapię manualną i współpracę z logopedą, aby wspierać prawidłowy rozwój dziecka oraz komfort funkcjonowania pacjentów z napięciami, bruksizmem i problemami stawu skroniowo-żuchwowego.
@@ -122,7 +121,7 @@ export default function Home() {
               Zobacz, jak pracuję
             </a>
           </div>
-          <ul className="trust-strip" aria-label="Najważniejsze informacje">
+          <ul className="trust-strip" aria-label="Główne obszary pomocy">
             {trustItems.map((item) => (
               <li key={item}>{item}</li>
             ))}
