@@ -95,10 +95,24 @@ const offerItems = [
 ];
 
 const processSteps = [
-  ["01", "Dokładny wywiad", "Najpierw słucham historii: objawów, codziennych trudności, wcześniejszych konsultacji i tego, co najbardziej martwi rodzica lub pacjenta."],
-  ["02", "Badanie manualne", "Sprawdzam napięcia, ruchomość, wzorce ruchowe, reakcje tkanek i możliwe powiązania między miejscem objawu a jego przyczyną."],
-  ["03", "Terapia i edukacja", "Dobieram techniki do konkretnej osoby. Tłumaczę prostym językiem, co robimy, po co to robimy i jak rozpoznać zmianę."],
-  ["04", "Zalecenia do domu", "Proces nie kończy się w gabinecie. Rodzic lub pacjent dostaje konkretne wskazówki, które wspierają efekt terapii."],
+  {
+    number: "01",
+    title: "Wywiad i diagnostyka",
+    text: "Zaczynam od rozmowy, obserwacji i badania manualnego. Szukam zależności między objawem, napięciem, ruchem, karmieniem, postawą lub pracą stawu skroniowo-żuchwowego.",
+    note: "najpierw zrozumienie problemu",
+  },
+  {
+    number: "02",
+    title: "Terapia dobrana do przyczyny",
+    text: "Dobieram techniki manualne, pracę z tkankami i edukację do konkretnej osoby. Tłumaczę prostym językiem, co robimy i dlaczego właśnie ten element ma znaczenie.",
+    note: "terapia bez przypadkowych działań",
+  },
+  {
+    number: "03",
+    title: "Plan i zalecenia do domu",
+    text: "Rodzic lub pacjent wychodzi z gabinetu z jasnym planem: co obserwować, co ćwiczyć, czego unikać i kiedy warto wrócić na kontrolę lub włączyć innego specjalistę.",
+    note: "konkretne kolejne kroki",
+  },
 ];
 
 const audience = [
@@ -221,23 +235,36 @@ export default function Home() {
       </section>
 
       <section className="method-section" id="metoda">
-        <div className="section split">
-          <div className="section-heading reveal">
+        <div className="section method-inner">
+          <div className="section-heading method-heading reveal">
             <p className="eyebrow">Sposób pracy</p>
-            <h2>Najpierw szukam przyczyny. Dopiero potem dobieram terapię.</h2>
+            <h2>Pracuję z przyczyną, nie tylko z objawem.</h2>
+            <p className="section-lead">
+              Każda wizyta ma spokojny, czytelny rytm: od rozmowy i badania, przez terapię, po zalecenia, które rodzic lub pacjent naprawdę rozumie.
+            </p>
           </div>
-          <p className="section-lead reveal">
-            Objaw bywa tylko końcówką historii. Dlatego każda wizyta zaczyna się od uważnej rozmowy i badania, a kończy zaleceniami, które rodzic lub pacjent naprawdę rozumie.
-          </p>
-        </div>
-        <div className="process-grid section">
-          {processSteps.map(([number, title, text]) => (
-            <article className="process-card reveal" key={number}>
-              <span>{number}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
+
+          <div className="process-grid">
+            {processSteps.map((step) => (
+              <article className="process-card reveal" key={step.number}>
+                <span className="process-number">{step.number}</span>
+                <span className="process-icon" aria-hidden="true">{step.number === "01" ? "?" : step.number === "02" ? "+" : ">"}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+                <small>{step.note}</small>
+              </article>
+            ))}
+          </div>
+
+          <aside className="ifompt-panel reveal" aria-label="Wyjaśnienie standardu IFOMPT">
+            <div className="ifompt-mark">
+              <strong>IFOMPT</strong>
+              <span>International Federation of Orthopaedic Manipulative Physical Therapists</span>
+            </div>
+            <p>
+              IFOMPT to międzynarodowa federacja wyznaczająca standardy zaawansowanej fizjoterapii ortopedyczno-manualnej. Certyfikacja w tym nurcie oznacza pracę opartą na dokładnym badaniu, bezpieczeństwie, rozumowaniu klinicznym i terapii dobranej do przyczyny problemu, a nie wyłącznie do miejsca bólu.
+            </p>
+          </aside>
         </div>
       </section>
 
