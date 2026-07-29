@@ -873,14 +873,17 @@ h3 {
 
 .cooperation-content {
   display: grid;
-  gap: clamp(24px, 4vw, 46px);
+  gap: clamp(24px, 4vw, 42px);
   align-items: start;
+  justify-content: center;
+  width: min(980px, 100%);
+  margin-inline: auto;
 }
 
 .cooperation-photos {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(12px, 2vw, 20px);
+  grid-template-columns: 1fr;
+  gap: clamp(18px, 2.4vw, 26px);
   align-items: start;
 }
 
@@ -893,12 +896,12 @@ h3 {
 }
 
 .cooperation-photo-main {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3.35;
   object-position: center 48%;
 }
 
 .cooperation-photo-side {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3.35;
   object-position: center 46%;
 }
 
@@ -910,7 +913,7 @@ h3 {
 .cooperation-topic {
   display: grid;
   align-content: start;
-  min-height: 210px;
+  min-height: 0;
   border: 1px solid rgba(65, 52, 77, 0.14);
   border-radius: 10px;
   background: rgba(255, 250, 248, 0.82);
@@ -1178,8 +1181,7 @@ h3 {
 @media (min-width: 640px) {
   .process-grid,
   .offer-paths,
-  .review-grid,
-  .cooperation-topics {
+  .review-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1214,7 +1216,7 @@ h3 {
   }
 
   .cooperation-content {
-    grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about-grid {
