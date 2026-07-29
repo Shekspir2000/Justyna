@@ -181,7 +181,7 @@ main {
 .hero-copy {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-self: stretch;
   gap: clamp(14px, 2vw, 24px);
   max-width: 760px;
