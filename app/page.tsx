@@ -213,40 +213,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="method-section" id="metoda">
-        <div className="section method-inner">
-          <div className="section-heading method-heading reveal">
-            <p className="eyebrow">Sposób pracy</p>
-            <h2>Pracuję z przyczyną, nie tylko z objawem.</h2>
-            <p className="section-lead">
-              Każda wizyta ma spokojny, czytelny rytm: od rozmowy i badania, przez terapię, po zalecenia, które rodzic lub pacjent naprawdę rozumie.
-            </p>
-          </div>
-
-          <div className="process-grid">
-            {processSteps.map((step) => (
-              <article className="process-card reveal" key={step.number}>
-                <span className="process-number">{step.number}</span>
-                <span className="process-icon" aria-hidden="true">{step.number === "01" ? "?" : step.number === "02" ? "+" : ">"}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-                <small>{step.note}</small>
-              </article>
-            ))}
-          </div>
-
-          <aside className="ifompt-panel reveal" aria-label="Wyjaśnienie standardu IFOMPT">
-            <div className="ifompt-mark">
-              <strong>IFOMPT</strong>
-              <span>International Federation of Orthopaedic Manipulative Physical Therapists</span>
-            </div>
-            <p>
-              IFOMPT to międzynarodowa federacja wyznaczająca standardy zaawansowanej fizjoterapii ortopedyczno-manualnej. Certyfikacja w tym nurcie oznacza pracę opartą na dokładnym badaniu, bezpieczeństwie, rozumowaniu klinicznym i terapii dobranej do przyczyny problemu, a nie wyłącznie do miejsca bólu.
-            </p>
-          </aside>
-        </div>
-      </section>
-
       <section className="section offer-section" id="oferta">
         <div className="section-heading reveal">
           <p className="eyebrow">Oferta</p>
@@ -284,6 +250,40 @@ export default function Home() {
               </ul>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="method-section" id="metoda">
+        <div className="section method-inner">
+          <div className="section-heading method-heading reveal">
+            <p className="eyebrow">Sposób pracy</p>
+            <h2>Pracuję z przyczyną, nie tylko z objawem.</h2>
+            <p className="section-lead">
+              Każda wizyta ma spokojny, czytelny rytm: od rozmowy i badania, przez terapię, po zalecenia, które rodzic lub pacjent naprawdę rozumie.
+            </p>
+          </div>
+
+          <div className="process-grid">
+            {processSteps.map((step) => (
+              <article className="process-card reveal" key={step.number}>
+                <span className="process-number">{step.number}</span>
+                <span className="process-icon" aria-hidden="true">{step.number === "01" ? "?" : step.number === "02" ? "+" : ">"}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+                <small>{step.note}</small>
+              </article>
+            ))}
+          </div>
+
+          <aside className="ifompt-panel reveal" aria-label="Wyjaśnienie standardu IFOMPT">
+            <div className="ifompt-mark">
+              <strong>IFOMPT</strong>
+              <span>International Federation of Orthopaedic Manipulative Physical Therapists</span>
+            </div>
+            <p>
+              IFOMPT to międzynarodowa federacja wyznaczająca standardy zaawansowanej fizjoterapii ortopedyczno-manualnej. Certyfikacja w tym nurcie oznacza pracę opartą na dokładnym badaniu, bezpieczeństwie, rozumowaniu klinicznym i terapii dobranej do przyczyny problemu, a nie wyłącznie do miejsca bólu.
+            </p>
+          </aside>
         </div>
       </section>
 
