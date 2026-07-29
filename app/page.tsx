@@ -102,9 +102,30 @@ const audience = [
 ];
 
 const reviews = [
-  "Justyna bardzo spokojnie tłumaczy, co widzi w badaniu i co możemy zrobić w domu. Po wizycie wreszcie wiedziałam, na co zwracać uwagę.",
-  "Profesjonalna, ciepła i konkretna. Nie było pośpiechu, tylko dokładny wywiad, badanie i jasny plan dalszej pracy.",
-  "Przy problemach ze stawem skroniowo-żuchwowym pierwszy raz ktoś połączył żuchwę, szyję i napięcia w jedną logiczną całość.",
+  {
+    author: "KBM",
+    date: "26 lipca 2026",
+    context: "wizyta z niemowlęciem",
+    text: "Pacjentka podkreśla dokładny wywiad, spokojne badanie i konkretne ćwiczenia do domu. Po zastosowaniu zaleceń zauważyła poprawę karmienia i snu dziecka.",
+  },
+  {
+    author: "Monika W.",
+    date: "26 lipca 2026",
+    context: "fizjoterapia dziecka",
+    text: "Rodzic docenia delikatne podejście do małego dziecka, dużą wiedzę oraz instrukcje pokazane tak, aby można było bezpiecznie kontynuować pracę w domu.",
+  },
+  {
+    author: "K.W.",
+    date: "26 lipca 2026",
+    context: "fizjoterapia stomatologiczna",
+    text: "Pacjentka zwraca uwagę na spokojną atmosferę, profesjonalizm i jasne wyjaśnienie celu ćwiczeń przy pracy ze stawem skroniowo-żuchwowym.",
+  },
+  {
+    author: "Ewelina",
+    date: "24 lipca 2026",
+    context: "ocena rozwoju dziecka",
+    text: "Opinia opisuje całościowe badanie dziecka, dokładne omówienie zaleceń oraz wyjaśnienie, co obserwować i jak wspierać rozwój w domu.",
+  },
 ];
 
 export default function Home() {
@@ -287,6 +308,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section reviews-section">
+        <div className="section-heading reviews-heading reveal">
+          <p className="eyebrow">Opinie i zaufanie</p>
+          <h2>Rodzice i pacjenci doceniają spokojne tłumaczenie, dokładność i jasny plan po wizycie.</h2>
+          <p className="section-lead">
+            Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję krótkie streszczenia czterech opinii pacjentów.
+          </p>
+        </div>
+        <div className="review-grid">
+          {reviews.map((review) => (
+            <article className="review-card reveal" key={`${review.author}-${review.date}`}>
+              <span>{review.context}</span>
+              <p>{review.text}</p>
+              <footer>
+                <strong>{review.author}</strong>
+                <small>{review.date}</small>
+              </footer>
+            </article>
+          ))}
+        </div>
+        <a className="reviews-source reveal" href={`${bookingUrl}#profile-reviews`}>
+          Zobacz opinie na ZnanyLekarz
+        </a>
+      </section>
+
       <section className="tmj-band">
         <div className="tmj-image reveal">
           <Image
@@ -369,21 +415,6 @@ export default function Home() {
           <p>
             Sekcja jest przygotowana pod przyszłą rozbudowę. Na razie bez koszyka, płatności i zakupów online.
           </p>
-        </div>
-      </section>
-
-      <section className="section reviews-section">
-        <div className="section-heading reveal">
-          <p className="eyebrow">Opinie i zaufanie</p>
-          <h2>Ponad 200 zadowolonych pacjentów i miejsce na prawdziwe opinie z profili rezerwacyjnych.</h2>
-        </div>
-        <div className="review-grid">
-          {reviews.map((review, index) => (
-            <blockquote className="review-card reveal" key={review}>
-              <p>{review}</p>
-              <footer>Opinia pacjenta {index + 1}</footer>
-            </blockquote>
-          ))}
         </div>
       </section>
 
