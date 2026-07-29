@@ -13,9 +13,18 @@ const navItems = [
 ];
 
 const trustItems = [
-  "niemowlęta i małe dzieci",
-  "TMJ, bruksizm i napięcia",
-  "współpraca z logopedą",
+  {
+    title: "10+ lat doświadczenia",
+    text: "w pracy z dziećmi, niemowlętami i pacjentami ortopedycznymi",
+  },
+  {
+    title: "200+ zadowolonych pacjentów",
+    text: "objętych indywidualną fizjoterapią i diagnostyką",
+  },
+  {
+    title: "Certyfikowana terapeutka MTI IFOMPT",
+    text: "terapia manualna, fizjoterapia stomatologiczna i pediatryczna",
+  },
 ];
 
 const offerItems = [
@@ -123,7 +132,10 @@ export default function Home() {
           </div>
           <ul className="trust-strip" aria-label="Główne obszary pomocy">
             {trustItems.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item.title}>
+                <strong>{item.title}</strong>
+                <span>{item.text}</span>
+              </li>
             ))}
           </ul>
         </div>

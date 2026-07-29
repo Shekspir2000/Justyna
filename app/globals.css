@@ -181,7 +181,7 @@ main {
 .hero-copy {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-self: stretch;
   gap: clamp(14px, 2vw, 24px);
   max-width: 760px;
@@ -191,7 +191,7 @@ main {
   margin-bottom: 0;
   max-width: 660px;
   color: var(--rose);
-  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  font-size: clamp(0.86rem, 1.1vw, 1.01rem);
   line-height: 1.35;
   text-transform: none;
 }
@@ -224,7 +224,7 @@ h3 {
 h1 {
   max-width: 880px;
   margin-bottom: 0;
-  font-size: clamp(2.5rem, 5.1vw, 4.35rem);
+  font-size: clamp(2.12rem, 4.35vw, 3.7rem);
   line-height: 1.03;
 }
 
@@ -256,24 +256,30 @@ h3 {
 .trust-strip {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
-  margin: 2px 0 0;
+  gap: 16px;
+  margin: 4px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .trust-strip li {
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-  border: 1px solid rgba(155, 91, 84, 0.18);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.58);
-  padding: 12px 14px;
+  display: grid;
+  gap: 4px;
+  max-width: 640px;
   color: var(--ink);
-  font-size: 0.88rem;
-  font-weight: 800;
-  line-height: 1.24;
+  line-height: 1.36;
+}
+
+.trust-strip strong {
+  color: var(--ink);
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  font-weight: 900;
+}
+
+.trust-strip span {
+  color: rgba(65, 52, 77, 0.74);
+  font-size: clamp(0.94rem, 1.05vw, 1.02rem);
+  font-weight: 600;
 }
 
 .hero-media {
@@ -788,10 +794,6 @@ h3 {
 
   .hero {
     grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.74fr);
-  }
-
-  .trust-strip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .intro-band {
