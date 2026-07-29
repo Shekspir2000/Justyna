@@ -463,9 +463,6 @@ export default function Home() {
           <strong>Justyna Jasińska</strong>
           <span>Fizjoterapia pediatryczna i stomatologiczna</span>
         </div>
-        <p>
-          SEO: fizjoterapia dzieci Kraków, fizjoterapia niemowląt Kraków, fizjoterapia stomatologiczna Kraków, fizjoterapeuta dziecięcy Kraków, bruksizm fizjoterapia Kraków.
-        </p>
       </footer>
 
       <a className="mobile-booking" href={bookingUrl}>
