@@ -620,6 +620,8 @@ h3 {
 
 .offer-section .section-heading {
   max-width: 860px;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .offer-section .section-heading .eyebrow {
@@ -629,9 +631,16 @@ h3 {
 
 .offer-section .section-lead {
   max-width: 720px;
-  margin-top: 18px;
+  margin: 18px auto 0;
   font-size: clamp(1.05rem, 1.55vw, 1.24rem);
   line-height: 1.6;
+}
+
+.offer-section .section-heading h2 {
+  max-width: 880px;
+  margin-inline: auto;
+  font-size: clamp(2.12rem, 4.35vw, 3.7rem);
+  line-height: 1.03;
 }
 
 .offer-feature {
@@ -702,11 +711,6 @@ h3 {
   background: rgba(255, 250, 248, 0.82);
   padding: clamp(22px, 3vw, 34px);
   box-shadow: 0 14px 42px rgba(65, 52, 77, 0.05);
-}
-
-.offer-path:first-child {
-  border-color: rgba(254, 168, 78, 0.46);
-  background: rgba(254, 168, 78, 0.12);
 }
 
 .offer-path h3 {
