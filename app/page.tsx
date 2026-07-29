@@ -27,6 +27,25 @@ const trustItems = [
   },
 ];
 
+const credentialItems = [
+  {
+    title: "MTI IFOMPT",
+    text: "certyfikowana terapeutka manualna według standardów IFOMPT",
+  },
+  {
+    title: "w trakcie MTII",
+    text: "kontynuacja szkolenia z terapii manualnej",
+  },
+  {
+    title: "Integracja Sensoryczna",
+    text: "terapia wspierająca rozwój i regulację dziecka",
+  },
+  {
+    title: "Akademia Fizjoterapii Stomatologicznej",
+    text: "fizjoterapia stomatologiczna, napięcia i praca z TMJ",
+  },
+];
+
 const offerItems = [
   {
     title: "Fizjoterapia niemowląt",
@@ -178,20 +197,24 @@ export default function Home() {
             />
           </div>
           <div className="about-copy reveal">
-            <p>
-              Jestem fizjoterapeutką z ponad 10-letnim doświadczeniem. Pracowałam z pacjentami ortopedycznymi, w poradni psychologiczno-pedagogicznej oraz w centrum stomatologicznym, dlatego patrzę na objawy szerzej niż tylko przez pryzmat jednego miejsca bólu.
-            </p>
-            <p>
-              Od 2021 roku asystuję na kursach Terapii Manualnej NOMPT PL. Jestem certyfikowaną terapeutką manualną MTI wg standardów IFOMPT, jestem w trakcie MTII, ukończyłam Akademię Fizjoterapii Stomatologicznej i pracuję także jako terapeutka Integracji Sensorycznej.
-            </p>
-            <p>
-              Stale poszerzam wiedzę na kursach i konferencjach, ale w gabinecie najważniejsze pozostaje dla mnie proste, zrozumiałe wyjaśnienie: co się dzieje, skąd może wynikać problem i co możemy z tym zrobić krok po kroku.
-            </p>
+            <div className="about-text">
+              <p>
+                Od ponad 10 lat pracuję jako fizjoterapeutka, zdobywając doświadczenie w placówkach ortopedycznych, poradni pedagogiczno-psychologicznej oraz centrum stomatologicznym. Jestem certyfikowaną Terapeutką Manualną MTI według standardów IFOMPT, terapeutką integracji sensorycznej oraz absolwentką Akademii Fizjoterapii Stomatologicznej. Obecnie kontynuuję szkolenie MTII, a od 2021 roku asystuję na kursach Terapii Manualnej NOMPT PL.
+              </p>
+              <p>
+                W gabinecie pracuję z niemowlętami, dziećmi i pacjentami z problemami w obrębie stawu skroniowo-żuchwowego. Łączę diagnostykę manualną, wiedzę pediatryczną, fizjoterapię stomatologiczną i współpracę z logopedami, aby patrzeć na problem szerzej niż tylko przez pryzmat pojedynczego objawu.
+              </p>
+              <p>
+                Moim celem jest znalezienie przyczyny dolegliwości oraz jasne wyjaśnienie jej pacjentowi lub rodzicom dziecka. Dzięki temu terapia staje się bardziej zrozumiała, a rodzic może aktywnie uczestniczyć w procesie wspierania rozwoju dziecka.
+              </p>
+            </div>
             <div className="credentials">
-              <span>MTI IFOMPT</span>
-              <span>w trakcie MTII</span>
-              <span>Integracja Sensoryczna</span>
-              <span>Akademia Fizjoterapii Stomatologicznej</span>
+              {credentialItems.map((item) => (
+                <div key={item.title}>
+                  <strong>{item.title}</strong>
+                  <span>{item.text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

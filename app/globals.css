@@ -363,6 +363,16 @@ h3 {
   gap: 30px;
 }
 
+.about-section .section-heading .eyebrow {
+  font-size: clamp(0.86rem, 1.1vw, 1.01rem);
+  text-transform: none;
+}
+
+.about-section .section-heading h2 {
+  font-size: clamp(2.12rem, 4.35vw, 3.7rem);
+  line-height: 1.03;
+}
+
 .about-photo {
   overflow: hidden;
   border-radius: 10px;
@@ -377,28 +387,48 @@ h3 {
 }
 
 .about-copy {
-  display: grid;
-  align-content: center;
-  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  gap: clamp(20px, 3vw, 34px);
   color: rgba(65, 52, 77, 0.84);
-  font-size: 1.04rem;
+  font-size: clamp(0.98rem, 1.12vw, 1.08rem);
+  line-height: 1.62;
+}
+
+.about-text {
+  display: grid;
+  gap: clamp(12px, 1.4vw, 18px);
+}
+
+.about-text p {
+  margin-bottom: 0;
 }
 
 .credentials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+  margin-top: 0;
+}
+
+.credentials div {
+  display: grid;
+  gap: 4px;
+  color: var(--ink);
+  line-height: 1.36;
+}
+
+.credentials strong {
+  color: var(--ink);
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  font-weight: 900;
 }
 
 .credentials span {
-  border: 1px solid rgba(155, 91, 84, 0.24);
-  border-radius: 999px;
-  background: rgba(225, 202, 196, 0.32);
-  color: var(--ink);
-  padding: 8px 12px;
-  font-size: 0.84rem;
-  font-weight: 800;
+  color: rgba(65, 52, 77, 0.74);
+  font-size: clamp(0.92rem, 1vw, 1rem);
+  font-weight: 600;
 }
 
 .method-section,
@@ -812,6 +842,10 @@ h3 {
   .shop-inner {
     grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr);
     align-items: center;
+  }
+
+  .about-grid {
+    align-items: stretch;
   }
 
   .offer-feature {
