@@ -935,7 +935,7 @@ h3 {
 
 .review-card {
   display: grid;
-  align-content: space-between;
+  align-content: start;
   gap: 18px;
   min-height: 280px;
   margin: 0;
@@ -959,6 +959,7 @@ h3 {
 }
 
 .review-card footer {
+  align-self: end;
   display: grid;
   gap: 2px;
   margin-top: 0;
@@ -1203,8 +1204,7 @@ h3 {
   }
 
   .review-card {
-    aspect-ratio: 1 / 1;
-    min-height: 0;
+    min-height: 330px;
   }
 
   .process-grid {
