@@ -11,7 +11,7 @@ const navItems: Array<[label: string, href: string | null]> = [
   ["Oferta", "#oferta"],
   ["Umów się", bookingUrl],
   ["Współpraca", "#wspolpraca"],
-  ["Sklep", null],
+  ["Sklep", "#sklep"],
   ["Kontakt", "#kontakt"],
 ];
 
@@ -401,6 +401,28 @@ export default function Home() {
                 <p>{keepShortWords(topic.text)}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="shop-section" id="sklep" aria-label="Sklep i materiały edukacyjne">
+        <div className="shop-inner reveal">
+          <div className="shop-copy">
+            <p className="eyebrow">Sklep</p>
+            <h2>{keepShortWords("Wkrótce materiały edukacyjne dla rodziców")}</h2>
+            <p>
+              {keepShortWords("Pracuję nad e-bookami, webinarami i prostymi materiałami, które pomogą rodzicom spokojniej rozumieć rozwój dziecka, napięcia, karmienie oraz codzienną pracę zaleconą po wizycie.")}
+            </p>
+          </div>
+          <div className="shop-note" aria-label="Informacja o planowanych materiałach">
+            <span>{keepShortWords("w przygotowaniu")}</span>
+            <strong>{keepShortWords("e-booki, webinary i materiały do domu")}</strong>
+            <p>
+              {keepShortWords("Bez koszyka i płatności na tym etapie. Informacje o premierze pojawią się tutaj oraz na Instagramie.")}
+            </p>
+            <a className="secondary-button" href="#kontakt">
+              Zapytaj o materiały
+            </a>
           </div>
         </div>
       </section>
