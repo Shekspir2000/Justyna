@@ -3,6 +3,9 @@ import Image from "next/image";
 const bookingUrl =
   "https://www.znanylekarz.pl/justyna-jasinska-2/fizjoterapeuta/krakow";
 
+const keepShortWords = (text: string) =>
+  text.replace(/(^|[\s(])([iIzZ]) /g, "$1$2\u00a0");
+
 const navItems = [
   ["O mnie", "#o-mnie"],
   ["Oferta", "#oferta"],
@@ -152,11 +155,11 @@ export default function Home() {
           {navItems.map(([label, href]) =>
             href ? (
               <a key={label} href={href}>
-                {label}
+                {keepShortWords(label)}
               </a>
             ) : (
               <span key={label} aria-disabled="true">
-                {label}
+                {keepShortWords(label)}
               </span>
             ),
           )}
@@ -168,10 +171,10 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy reveal">
-          <p className="eyebrow">Fizjoterapia niemowląt, dzieci i stawu skroniowo-żuchwowego w Krakowie</p>
-          <h1>Pomagam znaleźć przyczynę problemu, a nie tylko łagodzić objawy.</h1>
+          <p className="eyebrow">{keepShortWords("Fizjoterapia niemowląt, dzieci i stawu skroniowo-żuchwowego w Krakowie")}</p>
+          <h1>{keepShortWords("Pomagam znaleźć przyczynę problemu, a nie tylko łagodzić objawy")}</h1>
           <p className="lead">
-            Łączę fizjoterapię pediatryczną, stomatologiczną, terapię manualną i współpracę z logopedą, aby wspierać prawidłowy rozwój dziecka oraz komfort funkcjonowania pacjentów z napięciami, bruksizmem i problemami stawu skroniowo-żuchwowego.
+            {keepShortWords("Łączę fizjoterapię pediatryczną, stomatologiczną, terapię manualną i współpracę z logopedą, aby wspierać prawidłowy rozwój dziecka oraz komfort funkcjonowania pacjentów z napięciami, bruksizmem i problemami stawu skroniowo-żuchwowego.")}
           </p>
           <div className="hero-actions">
             <a className="primary-button" href={bookingUrl}>
@@ -184,8 +187,8 @@ export default function Home() {
           <ul className="trust-strip" aria-label="Główne obszary pomocy">
             {trustItems.map((item) => (
               <li key={item.title}>
-                <strong>{item.title}</strong>
-                <span>{item.text}</span>
+                <strong>{keepShortWords(item.title)}</strong>
+                <span>{keepShortWords(item.text)}</span>
               </li>
             ))}
           </ul>
@@ -207,16 +210,16 @@ export default function Home() {
       </section>
 
       <section className="intro-band" aria-label="Szybkie obszary pomocy">
-        <a href="#oferta">Niemowlęta i małe dzieci</a>
+        <a href="#oferta">{keepShortWords("Niemowlęta i małe dzieci")}</a>
         <a href="#oferta">Wady postawy</a>
         <a href="#oferta">Bruksizm i TMJ</a>
-        <a href="#wspolpraca">Współpraca z logopedą</a>
+        <a href="#wspolpraca">{keepShortWords("Współpraca z logopedą")}</a>
       </section>
 
       <section className="section about-section" id="o-mnie">
         <div className="section-heading reveal">
           <p className="eyebrow">O mnie</p>
-          <h2>Spokojna diagnoza, konkretne wyjaśnienie i terapia dobrana do potrzeb.</h2>
+          <h2>{keepShortWords("Spokojna diagnoza, konkretne wyjaśnienie i terapia dobrana do potrzeb")}</h2>
         </div>
         <div className="about-grid">
           <div className="about-photo reveal">
@@ -231,20 +234,20 @@ export default function Home() {
           <div className="about-copy reveal">
             <div className="about-text">
               <p>
-                Od ponad 10 lat pracuję jako fizjoterapeutka, zdobywając doświadczenie w placówkach ortopedycznych, poradni pedagogiczno-psychologicznej oraz centrum stomatologicznym. Jestem certyfikowaną Terapeutką Manualną MTI według standardów IFOMPT, terapeutką integracji sensorycznej oraz absolwentką Akademii Fizjoterapii Stomatologicznej. Obecnie kontynuuję szkolenie MTII, a od 2021 roku asystuję na kursach Terapii Manualnej NOMPT PL.
+                {keepShortWords("Od ponad 10 lat pracuję jako fizjoterapeutka, zdobywając doświadczenie w placówkach ortopedycznych, poradni pedagogiczno-psychologicznej oraz centrum stomatologicznym. Jestem certyfikowaną Terapeutką Manualną MTI według standardów IFOMPT, terapeutką integracji sensorycznej oraz absolwentką Akademii Fizjoterapii Stomatologicznej. Obecnie kontynuuję szkolenie MTII, a od 2021 roku asystuję na kursach Terapii Manualnej NOMPT PL.")}
               </p>
               <p>
-                W gabinecie pracuję z niemowlętami, dziećmi i pacjentami z problemami w obrębie stawu skroniowo-żuchwowego. Łączę diagnostykę manualną, wiedzę pediatryczną, fizjoterapię stomatologiczną i współpracę z logopedami, aby patrzeć na problem szerzej niż tylko przez pryzmat pojedynczego objawu.
+                {keepShortWords("W gabinecie pracuję z niemowlętami, dziećmi i pacjentami z problemami w obrębie stawu skroniowo-żuchwowego. Łączę diagnostykę manualną, wiedzę pediatryczną, fizjoterapię stomatologiczną i współpracę z logopedami, aby patrzeć na problem szerzej niż tylko przez pryzmat pojedynczego objawu.")}
               </p>
               <p>
-                Moim celem jest znalezienie przyczyny dolegliwości oraz jasne wyjaśnienie jej pacjentowi lub rodzicom dziecka. Dzięki temu terapia staje się bardziej zrozumiała, a rodzic może aktywnie uczestniczyć w procesie wspierania rozwoju dziecka.
+                {keepShortWords("Moim celem jest znalezienie przyczyny dolegliwości oraz jasne wyjaśnienie jej pacjentowi lub rodzicom dziecka. Dzięki temu terapia staje się bardziej zrozumiała, a rodzic może aktywnie uczestniczyć w procesie wspierania rozwoju dziecka.")}
               </p>
             </div>
             <div className="credentials">
               {credentialItems.map((item) => (
                 <div key={item.title}>
-                  <strong>{item.title}</strong>
-                  <span>{item.text}</span>
+                  <strong>{keepShortWords(item.title)}</strong>
+                  <span>{keepShortWords(item.text)}</span>
                 </div>
               ))}
             </div>
@@ -255,17 +258,17 @@ export default function Home() {
       <section className="section offer-section" id="oferta">
         <div className="section-heading reveal">
           <p className="eyebrow">Oferta</p>
-          <h2>Wybierz obszar, z którym chcesz przyjść na wizytę.</h2>
+          <h2>{keepShortWords("Wybierz obszar, z którym chcesz przyjść na wizytę")}</h2>
           <p className="section-lead">
-            Najmocniej wspieram niemowlęta i małe dzieci. Pracuję też z wadami postawy, napięciami żuchwy, bruksizmem, TMJ oraz w procesach prowadzonych wspólnie z logopedą.
+            {keepShortWords("Najmocniej wspieram niemowlęta i małe dzieci. Pracuję też z wadami postawy, napięciami żuchwy, bruksizmem, TMJ oraz w procesach prowadzonych wspólnie z logopedą.")}
           </p>
         </div>
         <div className="offer-feature reveal">
           <div>
             <p className="eyebrow">Pediatria na pierwszym miejscu</p>
-            <h3>Jeśli nie masz pewności, czy rozwój dziecka przebiega prawidłowo, zaczynamy od spokojnego sprawdzenia sytuacji.</h3>
+            <h3>{keepShortWords("Jeśli nie masz pewności, czy rozwój dziecka przebiega prawidłowo, zaczynamy od spokojnego sprawdzenia sytuacji.")}</h3>
             <p>
-              Podczas wizyty dokładnie przyglądam się napięciom, asymetrii, karmieniu, komfortowi leżenia, obracania oraz pierwszym wzorcom ruchu. Tłumaczę wszystko prostym językiem, aby rodzic wyszedł z gabinetu z jasnym planem działania, a nie z poczuciem niepokoju i listą trudnych pojęć.
+              {keepShortWords("Podczas wizyty dokładnie przyglądam się napięciom, asymetrii, karmieniu, komfortowi leżenia, obracania oraz pierwszym wzorcom ruchu. Tłumaczę wszystko prostym językiem, aby rodzic wyszedł z gabinetu z jasnym planem działania, a nie z poczuciem niepokoju i listą trudnych pojęć.")}
             </p>
           </div>
           <Image
@@ -279,12 +282,12 @@ export default function Home() {
         <div className="offer-paths">
           {offerGroups.map((item) => (
             <article className="offer-path reveal" key={item.title}>
-              <span>{item.label}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
+              <span>{keepShortWords(item.label)}</span>
+              <h3>{keepShortWords(item.title)}</h3>
+              <p>{keepShortWords(item.text)}</p>
               <ul>
                 {item.items.map((point) => (
-                  <li key={point}>{point}</li>
+                  <li key={point}>{keepShortWords(point)}</li>
                 ))}
               </ul>
             </article>
@@ -296,9 +299,9 @@ export default function Home() {
         <div className="section method-inner">
           <div className="section-heading method-heading reveal">
             <p className="eyebrow">Sposób pracy</p>
-            <h2>Pracuję z przyczyną, nie tylko z objawem.</h2>
+            <h2>{keepShortWords("Pracuję z przyczyną, nie tylko z objawem")}</h2>
             <p className="section-lead">
-              Każda wizyta ma spokojny, czytelny rytm: od rozmowy i badania, przez terapię, po zalecenia, które rodzic lub pacjent naprawdę rozumie.
+              {keepShortWords("Każda wizyta ma spokojny, czytelny rytm: od rozmowy i badania, przez terapię, po zalecenia, które rodzic lub pacjent naprawdę rozumie.")}
             </p>
           </div>
 
@@ -307,9 +310,9 @@ export default function Home() {
               <article className="process-card reveal" key={step.number}>
                 <span className="process-number">{step.number}</span>
                 <span className="process-icon" aria-hidden="true">{step.number === "01" ? "?" : step.number === "02" ? "+" : ">"}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-                <small>{step.note}</small>
+                <h3>{keepShortWords(step.title)}</h3>
+                <p>{keepShortWords(step.text)}</p>
+                <small>{keepShortWords(step.note)}</small>
               </article>
             ))}
           </div>
@@ -320,7 +323,7 @@ export default function Home() {
               <span>International Federation of Orthopaedic Manipulative Physical Therapists</span>
             </div>
             <p>
-              IFOMPT to międzynarodowa federacja wyznaczająca standardy zaawansowanej fizjoterapii ortopedyczno-manualnej. Certyfikacja w tym nurcie oznacza pracę opartą na dokładnym badaniu, bezpieczeństwie, rozumowaniu klinicznym i terapii dobranej do przyczyny problemu, a nie wyłącznie do miejsca bólu.
+              {keepShortWords("IFOMPT to międzynarodowa federacja wyznaczająca standardy zaawansowanej fizjoterapii ortopedyczno-manualnej. Certyfikacja w tym nurcie oznacza pracę opartą na dokładnym badaniu, bezpieczeństwie, rozumowaniu klinicznym i terapii dobranej do przyczyny problemu, a nie wyłącznie do miejsca bólu.")}
             </p>
           </aside>
         </div>
@@ -329,16 +332,16 @@ export default function Home() {
       <section className="section reviews-section">
         <div className="section-heading reviews-heading reveal">
           <p className="eyebrow">Opinie i zaufanie</p>
-          <h2>Rodzice i pacjenci doceniają spokojne tłumaczenie, dokładność i jasny plan po wizycie.</h2>
+          <h2>{keepShortWords("Rodzice i pacjenci doceniają spokojne tłumaczenie, dokładność i jasny plan po wizycie")}</h2>
           <p className="section-lead">
-            Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję krótkie streszczenia czterech opinii pacjentów.
+            {keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję krótkie streszczenia czterech opinii pacjentów.")}
           </p>
         </div>
         <div className="review-grid">
           {reviews.map((review) => (
             <article className="review-card reveal" key={`${review.author}-${review.date}`}>
-              <span>{review.context}</span>
-              <p>{review.text}</p>
+              <span>{keepShortWords(review.context)}</span>
+              <p>{keepShortWords(review.text)}</p>
               <footer>
                 <strong>{review.author}</strong>
                 <small>{review.date}</small>
@@ -354,7 +357,7 @@ export default function Home() {
       <section className="booking-section" id="umow-sie">
         <div className="booking-inner reveal">
           <p className="eyebrow">Rezerwacja</p>
-          <h2>Umów wizytę przez ZnanyLekarz.</h2>
+          <h2>{keepShortWords("Umów wizytę przez ZnanyLekarz")}</h2>
           <a className="primary-button" href={bookingUrl}>
             Umów się na wizytę
           </a>
@@ -364,9 +367,9 @@ export default function Home() {
       <section className="section cooperation-section" id="wspolpraca">
         <div className="cooperation-heading reveal">
           <p className="eyebrow">Współpraca</p>
-          <h2>Wsparcie dla logopedów i gabinetów logopedycznych.</h2>
+          <h2>{keepShortWords("Wsparcie dla logopedów i gabinetów logopedycznych")}</h2>
           <p className="section-lead">
-            Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci. Pokazuję, kiedy warto włączyć fizjoterapię, jak czytać napięcia i jak planować wspólne działania.
+            {keepShortWords("Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci. Pokazuję, kiedy warto włączyć fizjoterapię, jak czytać napięcia i jak planować wspólne działania.")}
           </p>
           <a className="secondary-button" href="#kontakt">
             Zapytaj o współpracę
@@ -394,8 +397,8 @@ export default function Home() {
           <div className="cooperation-topics">
             {cooperationTopics.map((topic) => (
               <article className="cooperation-topic reveal" key={topic.title}>
-                <h3>{topic.title}</h3>
-                <p>{topic.text}</p>
+                <h3>{keepShortWords(topic.title)}</h3>
+                <p>{keepShortWords(topic.text)}</p>
               </article>
             ))}
           </div>
@@ -407,7 +410,7 @@ export default function Home() {
           <p className="eyebrow">Kontakt</p>
           <h2>Masz pytanie przed pierwszą wizytą?</h2>
           <p>
-            Napisz krótko, co Cię niepokoi. Formularz nie zastępuje wizyty, ale pomaga ustalić, czy fizjoterapia pediatryczna, stomatologiczna lub współpraca z logopedą będzie dobrym kierunkiem.
+            {keepShortWords("Napisz krótko, co Cię niepokoi. Formularz nie zastępuje wizyty, ale pomaga ustalić, czy fizjoterapia pediatryczna, stomatologiczna lub współpraca z logopedą będzie dobrym kierunkiem.")}
           </p>
           <div className="contact-list" aria-label="Dane kontaktowe">
             <a href={bookingUrl}>ZnanyLekarz: profil Justyny Jasińskiej</a>
@@ -419,7 +422,7 @@ export default function Home() {
         </div>
         <form className="contact-form reveal" aria-label="Formularz kontaktowy">
           <label>
-            Imię i nazwisko
+            {keepShortWords("Imię i nazwisko")}
             <input name="name" type="text" autoComplete="name" placeholder="Anna Nowak" />
           </label>
           <label>
@@ -434,7 +437,7 @@ export default function Home() {
             Temat
             <select name="topic" defaultValue="">
               <option value="" disabled>Wybierz temat</option>
-              <option>Wizyta z niemowlęciem</option>
+              <option>{keepShortWords("Wizyta z niemowlęciem")}</option>
               <option>Fizjoterapia dziecka</option>
               <option>Bruksizm / TMJ</option>
               <option>Współpraca logopedyczna</option>
@@ -446,7 +449,7 @@ export default function Home() {
           </label>
           <label className="rodo full">
             <input type="checkbox" name="rodo" />
-            <span>Wyrażam zgodę na kontakt w odpowiedzi na przesłaną wiadomość oraz przetwarzanie danych w tym celu. Szczegóły RODO zostaną uzupełnione w polityce prywatności.</span>
+            <span>{keepShortWords("Wyrażam zgodę na kontakt w odpowiedzi na przesłaną wiadomość oraz przetwarzanie danych w tym celu. Szczegóły RODO zostaną uzupełnione w polityce prywatności.")}</span>
           </label>
           <button className="primary-button full" type="submit">
             Wyślij wiadomość
@@ -457,7 +460,7 @@ export default function Home() {
       <footer className="site-footer">
         <div>
           <strong>Justyna Jasińska</strong>
-          <span>Fizjoterapia pediatryczna i stomatologiczna</span>
+          <span>{keepShortWords("Fizjoterapia pediatryczna i stomatologiczna")}</span>
         </div>
       </footer>
 
