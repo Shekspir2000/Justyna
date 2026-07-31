@@ -6,7 +6,7 @@ const bookingUrl =
 const keepShortWords = (text: string) =>
   text.replace(/(^|[\s(])([iIzZ]) /g, "$1$2\u00a0");
 
-const navItems = [
+const navItems: Array<[label: string, href: string | null]> = [
   ["O mnie", "#o-mnie"],
   ["Oferta", "#oferta"],
   ["Umów się", bookingUrl],
