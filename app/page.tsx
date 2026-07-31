@@ -414,16 +414,6 @@ export default function Home() {
               {keepShortWords("Pracuję nad e-bookami, webinarami i prostymi materiałami, które pomogą rodzicom spokojniej rozumieć rozwój dziecka, napięcia, karmienie oraz codzienną pracę zaleconą po wizycie.")}
             </p>
           </div>
-          <div className="shop-note" aria-label="Informacja o planowanych materiałach">
-            <span>{keepShortWords("w przygotowaniu")}</span>
-            <strong>{keepShortWords("e-booki, webinary i materiały do domu")}</strong>
-            <p>
-              {keepShortWords("Bez koszyka i płatności na tym etapie. Informacje o premierze pojawią się tutaj oraz na Instagramie.")}
-            </p>
-            <a className="secondary-button" href="#kontakt">
-              Zapytaj o materiały
-            </a>
-          </div>
         </div>
       </section>
 

@@ -995,10 +995,9 @@ h3 {
 }
 
 .shop-inner {
-  width: min(1180px, 100%);
+  width: min(920px, 100%);
   margin-inline: auto;
   display: grid;
-  gap: clamp(24px, 4vw, 46px);
   align-items: center;
 }
 
@@ -1027,42 +1026,6 @@ h3 {
   color: rgba(255, 250, 248, 0.78);
   font-size: clamp(1.05rem, 1.45vw, 1.2rem);
   line-height: 1.65;
-}
-
-.shop-note {
-  display: grid;
-  gap: 14px;
-  border: 1px solid rgba(255, 250, 248, 0.2);
-  border-radius: 10px;
-  background: rgba(255, 250, 248, 0.08);
-  padding: clamp(22px, 3vw, 34px);
-  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.14);
-}
-
-.shop-note span {
-  color: var(--gold);
-  font-size: 0.86rem;
-  font-weight: 900;
-}
-
-.shop-note strong {
-  color: #fffaf8;
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
-  font-size: clamp(1.46rem, 2.1vw, 2rem);
-  line-height: 1.12;
-}
-
-.shop-note p {
-  margin-bottom: 4px;
-  color: rgba(255, 250, 248, 0.76);
-  font-size: 1rem;
-}
-
-.shop-note .secondary-button {
-  justify-self: start;
-  border-color: rgba(255, 250, 248, 0.38);
-  background: rgba(255, 250, 248, 0.1);
-  color: #fffaf8;
 }
 
 .contact-copy p {
@@ -1294,10 +1257,6 @@ h3 {
     align-items: center;
   }
 
-  .shop-inner {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.54fr);
-  }
-
   .site-footer {
     grid-template-columns: minmax(260px, 0.6fr) 1fr;
     align-items: start;
@@ -1353,10 +1312,6 @@ h3 {
 
   .shop-section {
     padding-block: 64px;
-  }
-
-  .shop-note .secondary-button {
-    width: 100%;
   }
 
   .reviews-source {
