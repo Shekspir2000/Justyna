@@ -216,7 +216,7 @@ export default function Home() {
       <section className="section about-section" id="o-mnie">
         <div className="section-heading reveal">
           <p className="eyebrow">O mnie</p>
-          <h2>Spokojna diagnoza, konkretne wyjaśnienie i terapia dobrana do człowieka.</h2>
+          <h2>Spokojna diagnoza, konkretne wyjaśnienie i terapia dobrana do potrzeb.</h2>
         </div>
         <div className="about-grid">
           <div className="about-photo reveal">
@@ -461,9 +461,6 @@ export default function Home() {
         </div>
       </footer>
 
-      <a className="mobile-booking" href={bookingUrl}>
-        Umów się
-      </a>
     </main>
   );
 }
