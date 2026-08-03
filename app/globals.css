@@ -13,6 +13,9 @@
   --soft: #f7efec;
   --line: rgba(65, 52, 77, 0.18);
   --shadow: 0 22px 70px rgba(30, 21, 82, 0.13);
+  --content: 1180px;
+  --gutter: clamp(18px, 5vw, 72px);
+  --section-space: clamp(72px, 9vw, 132px);
 }
 
 * {
@@ -70,7 +73,7 @@ main {
   justify-content: space-between;
   gap: 18px;
   min-height: 76px;
-  padding: 14px clamp(18px, 5vw, 72px);
+  padding: 14px var(--gutter);
   border-bottom: 1px solid rgba(65, 52, 77, 0.1);
   background: rgba(255, 250, 248, 0.88);
   backdrop-filter: blur(18px);
@@ -214,7 +217,7 @@ main {
   min-height: calc(100svh - 76px);
   border-bottom: 1px solid rgba(65, 52, 77, 0.08);
   background: linear-gradient(90deg, rgba(225, 202, 196, 0.34), rgba(255, 250, 248, 0.94) 44%, rgba(255, 250, 248, 0.72));
-  padding: clamp(42px, 7vw, 92px) clamp(18px, 5vw, 72px) clamp(42px, 5vw, 62px);
+  padding: clamp(42px, 7vw, 92px) var(--gutter) clamp(42px, 5vw, 62px);
 }
 
 .hero-background {
@@ -225,17 +228,35 @@ main {
   min-height: calc(132svh - 76px);
   overflow: hidden;
   border-bottom: 0;
-  background:
-    linear-gradient(90deg, rgba(30, 21, 82, 0.83) 0%, rgba(30, 21, 82, 0.68) 33%, rgba(30, 21, 82, 0.28) 57%, rgba(30, 21, 82, 0.04) 100%),
-    url("/images/justyna-premium-clinic-wide-hero-v2.png") center center / cover no-repeat;
-  background-attachment: fixed;
-  padding: clamp(132px, 13vw, 174px) clamp(18px, 5vw, 72px) clamp(56px, 7vw, 96px);
+  background: var(--ink);
+  padding: clamp(132px, 13vw, 174px) var(--gutter) clamp(56px, 7vw, 96px);
+}
+
+.hero-background::before,
+.hero-background::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-background::before {
+  inset: 0;
+  z-index: 0;
+  background: url("/images/justyna-hero-clinic-generated.png") center center / 124% auto no-repeat;
+  transform: none;
+  transform-origin: center center;
+}
+
+.hero-background::after {
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(30, 21, 82, 0.83) 0%, rgba(30, 21, 82, 0.68) 33%, rgba(30, 21, 82, 0.28) 57%, rgba(30, 21, 82, 0.04) 100%);
 }
 
 .hero-background .hero-copy {
   --hero-text-shift: -118px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   justify-content: center;
   max-width: min(760px, 48vw);
   min-height: auto;
@@ -257,7 +278,7 @@ main {
 .hero-background h1 {
   max-width: 760px;
   color: #fffaf8;
-  font-size: clamp(2.8rem, 5vw, 5.35rem);
+  font-size: clamp(2.38rem, 4.25vw, 4.55rem);
   line-height: 0.98;
 }
 
@@ -309,6 +330,16 @@ main {
   }
 }
 
+@keyframes hero-image-parallax {
+  from {
+    background-position: center 51%;
+  }
+
+  to {
+    background-position: center 47%;
+  }
+}
+
 @keyframes hero-header-background {
   0% {
     min-height: 88px;
@@ -356,6 +387,12 @@ main {
 }
 
 @supports (animation-timeline: scroll()) {
+  .hero-background::before {
+    animation: hero-image-parallax linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 72svh;
+  }
+
   .hero-background .hero-copy {
     animation: hero-text-parallax linear both;
     animation-timeline: scroll(root block);
@@ -533,9 +570,9 @@ h3 {
 .marquee-band {
   position: relative;
   overflow: hidden;
-  min-height: clamp(58px, 5vw, 78px);
+  min-height: clamp(36px, 3.05vw, 48px);
   border-block: 1px solid rgba(255, 250, 248, 0.08);
-  background: var(--plum);
+  background: var(--ink);
   color: rgba(255, 250, 248, 0.64);
 }
 
@@ -543,7 +580,7 @@ h3 {
   display: flex;
   align-items: center;
   width: max-content;
-  min-height: clamp(58px, 5vw, 78px);
+  min-height: clamp(36px, 3.05vw, 48px);
   white-space: nowrap;
   animation: marquee-scroll 42s linear infinite;
 }
@@ -587,9 +624,9 @@ h3 {
 }
 
 .section {
-  width: min(1180px, calc(100% - 36px));
+  width: min(var(--content), calc(100% - 36px));
   margin: 0 auto;
-  padding: clamp(72px, 9vw, 132px) 0;
+  padding: var(--section-space) 0;
 }
 
 .section-heading {
@@ -607,6 +644,10 @@ h3 {
 .contact-section {
   display: grid;
   gap: 30px;
+}
+
+.contact-section {
+  max-width: 980px;
 }
 
 .about-section .section-heading .eyebrow {
@@ -874,13 +915,13 @@ h3 {
   background:
     linear-gradient(180deg, rgba(225, 202, 196, 0.36), rgba(255, 250, 248, 0.86)),
     var(--soft);
-  padding-inline: clamp(18px, 5vw, 72px);
+  padding-inline: var(--gutter);
 }
 
 .offer-section .section-heading,
 .offer-feature,
 .offer-paths {
-  width: min(1180px, 100%);
+  width: min(var(--content), 100%);
   margin-inline: auto;
 }
 
@@ -1019,7 +1060,7 @@ h3 {
 }
 
 .booking-section {
-  padding: clamp(72px, 10vw, 132px) 18px;
+  padding: var(--section-space) var(--gutter);
   background:
     linear-gradient(rgba(30, 21, 82, 0.76), rgba(30, 21, 82, 0.76)),
     url("/images/tmj-portret.jpg") center / cover;
@@ -1027,7 +1068,7 @@ h3 {
 }
 
 .booking-inner {
-  width: min(860px, 100%);
+  width: min(var(--content), 100%);
   margin: 0 auto;
   text-align: center;
 }
@@ -1097,6 +1138,8 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(18px, 2.4vw, 26px);
   align-items: start;
+  width: min(760px, 100%);
+  margin-inline: auto;
 }
 
 .cooperation-photos img {
@@ -1228,7 +1271,7 @@ h3 {
 }
 
 .shop-section {
-  padding: clamp(70px, 8vw, 116px) clamp(18px, 5vw, 72px);
+  padding: clamp(70px, 8vw, 116px) var(--gutter);
   background:
     linear-gradient(135deg, rgba(30, 21, 82, 0.94), rgba(65, 52, 77, 0.9)),
     var(--ink);
@@ -1236,7 +1279,7 @@ h3 {
 }
 
 .shop-inner {
-  width: min(920px, 100%);
+  width: min(var(--content), 100%);
   margin-inline: auto;
   display: grid;
   align-items: center;
@@ -1296,7 +1339,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.62);
-  padding: clamp(18px, 3vw, 30px);
+  padding: clamp(18px, 2.4vw, 26px);
   box-shadow: var(--shadow);
 }
 
@@ -1357,7 +1400,7 @@ h3 {
 .site-footer {
   display: grid;
   gap: 16px;
-  padding: 34px clamp(18px, 5vw, 72px) 92px;
+  padding: 34px var(--gutter) 92px;
   background: var(--ink);
   color: #fffaf8;
 }
@@ -1446,10 +1489,15 @@ h3 {
   }
 
   .about-grid,
-  .contact-section,
   .split {
     grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr);
     align-items: center;
+  }
+
+  .contact-section {
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.96fr);
+    align-items: start;
+    gap: clamp(28px, 4vw, 46px);
   }
 
   .about-grid {
@@ -1502,6 +1550,45 @@ h3 {
 }
 
 @media (max-width: 639px) {
+  .hero-background {
+    min-height: calc(118svh - 66px);
+    padding-top: 104px;
+    padding-inline: 20px;
+  }
+
+  .hero-background::before {
+    background-size: cover;
+  }
+
+  .hero-background::after {
+    background: linear-gradient(90deg, rgba(30, 21, 82, 0.86) 0%, rgba(30, 21, 82, 0.66) 54%, rgba(30, 21, 82, 0.24) 100%);
+  }
+
+  .hero-background .hero-copy {
+    --hero-text-shift: -72px;
+    max-width: min(100%, 342px);
+    gap: 18px;
+    padding-top: 10px;
+  }
+
+  .hero-background h1 {
+    max-width: 100%;
+    font-size: clamp(2.08rem, 8.84vw, 2.6rem);
+    line-height: 1.02;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .hero-background .lead {
+    max-width: 315px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .hero-background .trust-strip {
+    grid-template-columns: 1fr;
+  }
+
   h1,
   h2,
   h3,

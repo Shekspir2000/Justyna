@@ -4,7 +4,7 @@ const bookingUrl =
   "https://www.znanylekarz.pl/justyna-jasinska-2/fizjoterapeuta/krakow";
 
 const keepShortWords = (text: string) =>
-  text.replace(/(^|[\s(])([iIzZ]) /g, "$1$2\u00a0");
+  text.replace(/(^|[\s(])([aAiIzZ]) /g, "$1$2\u00a0");
 
 const navItems: Array<[label: string, href: string | null]> = [
   ["O mnie", "#o-mnie"],
