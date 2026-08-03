@@ -1585,7 +1585,7 @@ h3 {
 
   .hero-background {
     min-height: calc(118svh - 66px);
-    padding-top: 126px;
+    padding-top: clamp(210px, 27svh, 250px);
     padding-inline: 20px;
   }
 
