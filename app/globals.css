@@ -1571,8 +1571,14 @@ h3 {
 
 @media (max-width: 639px) {
   .hero-preview .site-header {
-    min-height: 78px;
-    padding-block: 10px;
+    position: sticky;
+    top: 0;
+    min-height: 86px;
+    padding-block: 12px;
+    border-bottom-color: rgba(255, 250, 248, 0.12);
+    background: rgba(30, 21, 82, 0.96);
+    backdrop-filter: blur(16px);
+    animation: none;
   }
 
   .hero-preview .brand {
@@ -1583,18 +1589,19 @@ h3 {
     line-height: 1.2;
   }
 
-  .hero-background {
-    min-height: calc(118svh - 66px);
-    padding-top: clamp(210px, 27svh, 250px);
+  .hero.hero-background {
+    min-height: calc(122svh - 86px);
+    padding-top: clamp(54px, 8svh, 86px);
     padding-inline: 20px;
   }
 
   .hero-background::before {
+    background-position: 96% center;
     background-size: cover;
   }
 
   .hero-background::after {
-    background: linear-gradient(90deg, rgba(30, 21, 82, 0.86) 0%, rgba(30, 21, 82, 0.66) 54%, rgba(30, 21, 82, 0.24) 100%);
+    background: linear-gradient(90deg, rgba(30, 21, 82, 0.9) 0%, rgba(30, 21, 82, 0.74) 54%, rgba(30, 21, 82, 0.24) 100%);
   }
 
   .hero-background .hero-copy {
@@ -1705,7 +1712,8 @@ h3 {
   }
 
   .hero-preview .site-header {
-    min-height: 70px;
+    min-height: 76px;
+    padding-block: 9px;
   }
 
   .brand {
@@ -1724,6 +1732,11 @@ h3 {
   .hero {
     min-height: auto;
     padding-top: 30px;
+  }
+
+  .hero.hero-background {
+    min-height: calc(126svh - 76px);
+    padding-top: clamp(46px, 7svh, 72px);
   }
 
   .hero-media,
