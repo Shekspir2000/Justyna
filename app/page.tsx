@@ -4,7 +4,7 @@ const bookingUrl =
   "https://www.znanylekarz.pl/justyna-jasinska-2/fizjoterapeuta/krakow";
 
 const keepShortWords = (text: string) =>
-  text.replace(/(^|[\s(])([aAiIzZ]) /g, "$1$2\u00a0");
+  text.replace(/(^|[\s(])([aAiIoOuUwWzZ]) /g, "$1$2\u00a0");
 
 const navItems: Array<[label: string, href: string | null]> = [
   ["O mnie", "#o-mnie"],
@@ -226,15 +226,17 @@ export default function Home() {
       </section>
 
       <section className="section about-section" id="o-mnie">
-        <div className="section-heading reveal">
+        <div className="about-editorial-intro reveal">
           <p className="eyebrow">O mnie</p>
-          <h2>{keepShortWords("Spokojna diagnoza, konkretne wyjaśnienie i terapia dobrana do potrzeb")}</h2>
+          <blockquote>
+            {keepShortWords("Najważniejsze jest dla mnie, aby rodzic rozumiał, co dzieje się z dzieckiem, skąd mogą wynikać trudności i jakie kroki warto podjąć dalej")}
+          </blockquote>
         </div>
         <div className="about-grid">
           <div className="about-photo reveal">
             <Image
-              src="/images/about-portrait-38.jpg"
-              alt="Portret Justyny Jasińskiej"
+              src="/images/justyna-pediatric-clinic-gray-scrubs.png"
+              alt="Justyna Jasińska w jasnym gabinecie fizjoterapii pediatrycznej"
               width={1066}
               height={1600}
               unoptimized
@@ -242,6 +244,7 @@ export default function Home() {
             />
           </div>
           <div className="about-copy reveal">
+            <h2>{keepShortWords("Spokojna diagnoza, konkretne wyjaśnienie i terapia dobrana do potrzeb")}</h2>
             <div className="about-text">
               <p>
                 {keepShortWords("Od ponad 10 lat pracuję jako fizjoterapeutka, zdobywając doświadczenie w placówkach ortopedycznych, poradni pedagogiczno-psychologicznej oraz centrum stomatologicznym. Jestem certyfikowaną Terapeutką Manualną MTI według standardów IFOMPT, terapeutką integracji sensorycznej oraz absolwentką Akademii Fizjoterapii Stomatologicznej. Obecnie kontynuuję szkolenie MTII, a od 2021 roku asystuję na kursach Terapii Manualnej NOMPT PL.")}
