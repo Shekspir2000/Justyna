@@ -15,6 +15,17 @@ const navItems: Array<[label: string, href: string | null]> = [
   ["Kontakt", "#kontakt"],
 ];
 
+const marqueeItems = [
+  "fizjoterapia niemowląt",
+  "fizjoterapia dzieci",
+  "wady postawy",
+  "bruksizm",
+  "TMJ",
+  "fizjoterapia stomatologiczna",
+  "terapia manualna",
+  "współpraca z logopedą",
+];
+
 const trustItems = [
   {
     title: "10+ lat doświadczenia",
@@ -145,7 +156,7 @@ const reviews = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="hero-preview">
       <header className="site-header" aria-label="Główna nawigacja">
         <a className="brand" href="#top" aria-label="Justyna Jasińska, strona główna">
           <span>Justyna Jasińska</span>
@@ -169,8 +180,8 @@ export default function Home() {
         </a>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-copy reveal">
+      <section className="hero hero-background" id="top">
+        <div className="hero-copy">
           <p className="eyebrow">{keepShortWords("Fizjoterapia niemowląt, dzieci i stawu skroniowo-żuchwowego w Krakowie")}</p>
           <h1>{keepShortWords("Pomagam znaleźć przyczynę problemu, a nie tylko łagodzić objawy")}</h1>
           <p className="lead">
@@ -193,27 +204,25 @@ export default function Home() {
             ))}
           </ul>
         </div>
-        <div className="hero-media reveal">
-          <Image
-            src="/images/hero-img-6091.jpg"
-            alt="Justyna Jasińska, fizjoterapeutka pediatryczna i stomatologiczna"
-            width={1200}
-            height={1800}
-            priority
-            sizes="(min-width: 820px) 40vw, 100vw"
-          />
-          <div className="photo-note">
-            <strong>Justyna Jasińska</strong>
-            <span>certyfikowana terapeutka manualna MTI wg standardów IFOMPT</span>
-          </div>
-        </div>
       </section>
 
-      <section className="intro-band" aria-label="Szybkie obszary pomocy">
-        <a href="#oferta">{keepShortWords("Niemowlęta i małe dzieci")}</a>
-        <a href="#oferta">Wady postawy</a>
-        <a href="#oferta">Bruksizm i TMJ</a>
-        <a href="#wspolpraca">{keepShortWords("Współpraca z logopedą")}</a>
+      <section className="marquee-band" aria-label="Najważniejsze obszary pracy">
+        <div className="marquee-track">
+          <div className="marquee-group">
+            {marqueeItems.map((item) => (
+              <span className="marquee-item" key={item}>
+                {keepShortWords(item)}
+              </span>
+            ))}
+          </div>
+          <div className="marquee-group" aria-hidden="true">
+            {marqueeItems.map((item) => (
+              <span className="marquee-item" key={`repeat-${item}`}>
+                {keepShortWords(item)}
+              </span>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="section about-section" id="o-mnie">
@@ -228,6 +237,7 @@ export default function Home() {
               alt="Portret Justyny Jasińskiej"
               width={1066}
               height={1600}
+              unoptimized
               sizes="(min-width: 820px) 42vw, 100vw"
             />
           </div>
@@ -276,6 +286,7 @@ export default function Home() {
             alt="Delikatna praca manualna w gabinecie fizjoterapii"
             width={1350}
             height={1800}
+            unoptimized
             sizes="(min-width: 820px) 50vw, 100vw"
           />
         </div>
@@ -383,6 +394,7 @@ export default function Home() {
               alt="Justyna Jasińska podczas szkolenia z pracy manualnej w obrębie twarzy i żuchwy"
               width={1050}
               height={1400}
+              unoptimized
               sizes="(min-width: 820px) 34vw, 100vw"
             />
             <Image
@@ -391,6 +403,7 @@ export default function Home() {
               alt="Obserwacja technik manualnych podczas szkolenia dla specjalistów"
               width={1050}
               height={1400}
+              unoptimized
               sizes="(min-width: 820px) 22vw, 50vw"
             />
           </div>
