@@ -1596,8 +1596,7 @@ h3 {
   }
 
   .hero-background::before {
-    background-position: 84% center;
-    background-size: cover;
+    background: url("/images/hero-mobile-justyna-6091.png") 56% center / cover no-repeat;
   }
 
   .hero-background::after {
@@ -1740,7 +1739,7 @@ h3 {
   }
 
   .hero-background::before {
-    background-position: 86% center;
+    background-position: 56% center;
   }
 
   .hero-media,
