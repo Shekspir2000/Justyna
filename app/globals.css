@@ -1591,12 +1591,12 @@ h3 {
 
   .hero.hero-background {
     min-height: calc(122svh - 86px);
-    padding-top: clamp(54px, 8svh, 86px);
+    padding-top: clamp(24px, 4.4svh, 42px);
     padding-inline: 20px;
   }
 
   .hero-background::before {
-    background-position: 96% center;
+    background-position: 84% center;
     background-size: cover;
   }
 
@@ -1608,7 +1608,7 @@ h3 {
     --hero-text-shift: -72px;
     max-width: min(100%, 342px);
     gap: 18px;
-    padding-top: 10px;
+    padding-top: 0;
   }
 
   .hero-background h1 {
@@ -1736,7 +1736,11 @@ h3 {
 
   .hero.hero-background {
     min-height: calc(126svh - 76px);
-    padding-top: clamp(46px, 7svh, 72px);
+    padding-top: clamp(18px, 3.4svh, 32px);
+  }
+
+  .hero-background::before {
+    background-position: 86% center;
   }
 
   .hero-media,
