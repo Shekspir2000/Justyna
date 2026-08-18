@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -30,7 +31,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--plum);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
 }
@@ -77,6 +78,7 @@ main {
   border-bottom: 1px solid rgba(65, 52, 77, 0.1);
   background: rgba(255, 250, 248, 0.88);
   backdrop-filter: blur(18px);
+  font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .hero-preview .site-header {
@@ -112,6 +114,10 @@ main {
   color: rgba(255, 250, 248, 0.46);
 }
 
+.hero-preview .header-cta {
+  margin-right: clamp(32px, 5vw, 96px);
+}
+
 .brand {
   display: grid;
   gap: 2px;
@@ -120,10 +126,27 @@ main {
 
 .brand span {
   color: var(--ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-family: inherit;
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   font-weight: 700;
   line-height: 1.05;
+}
+
+.brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.36em;
+  flex-wrap: wrap;
+}
+
+.brand .brand-title {
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.48em;
+  font-weight: 750;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
 }
 
 .brand small {
@@ -225,11 +248,11 @@ main {
   isolation: isolate;
   display: flex;
   align-items: flex-start;
-  min-height: calc(132svh - 76px);
+  min-height: calc(119svh - 76px);
   overflow: hidden;
   border-bottom: 0;
   background: var(--ink);
-  padding: clamp(132px, 13vw, 174px) var(--gutter) clamp(56px, 7vw, 96px);
+  padding: clamp(112px, 11vw, 150px) var(--gutter) clamp(42px, 5.8vw, 78px);
 }
 
 .hero-background::before,
@@ -242,8 +265,8 @@ main {
 .hero-background::before {
   inset: -1%;
   z-index: 0;
-  background: url("/images/hero-img-6091-wide-clinic-3840.png") 66% center / cover no-repeat;
-  transform: scale(1.01);
+  background: url("/images/justyna-hero-2.png") 66% center / auto 100% no-repeat;
+  transform: none;
   transform-origin: center center;
 }
 
@@ -262,6 +285,7 @@ main {
   min-height: auto;
   gap: clamp(18px, 2vw, 28px);
   color: #fffaf8;
+  font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   padding-top: clamp(38px, 8vh, 86px);
   animation: none;
 }
@@ -278,7 +302,9 @@ main {
 .hero-background h1 {
   max-width: 760px;
   color: #fffaf8;
-  font-size: clamp(2.38rem, 4.25vw, 4.55rem);
+  font-family: inherit;
+  font-size: clamp(1.74rem, 3.11vw, 3.32rem);
+  font-weight: 500;
   line-height: 0.98;
 }
 
@@ -406,6 +432,7 @@ main {
   }
 
   .hero-preview .brand span,
+  .hero-preview .brand-title,
   .hero-preview .desktop-nav,
   .hero-preview .desktop-nav a {
     animation: hero-header-text linear both;
@@ -458,7 +485,7 @@ h1,
 h2,
 h3 {
   color: var(--ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-family: inherit;
   line-height: 1.04;
   letter-spacing: 0;
 }
@@ -558,7 +585,7 @@ h3 {
 }
 
 .photo-note strong {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-family: inherit;
   font-size: 1.24rem;
 }
 
@@ -572,8 +599,9 @@ h3 {
   overflow: hidden;
   min-height: clamp(36px, 3.05vw, 48px);
   border-block: 1px solid rgba(255, 250, 248, 0.08);
-  background: var(--ink);
+  background: var(--blue);
   color: rgba(255, 250, 248, 0.64);
+  font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .marquee-track {
@@ -646,6 +674,10 @@ h3 {
   gap: 30px;
 }
 
+.about-section {
+  font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 .contact-section {
   max-width: 980px;
 }
@@ -654,7 +686,7 @@ h3 {
   display: grid;
   gap: clamp(16px, 2vw, 24px);
   max-width: 980px;
-  margin-bottom: clamp(34px, 5vw, 70px);
+  margin-bottom: 0;
 }
 
 .about-editorial-intro .eyebrow {
@@ -663,13 +695,13 @@ h3 {
 }
 
 .about-editorial-intro blockquote {
-  max-width: 640px;
+  max-width: 760px;
   margin: 0;
   color: var(--ink);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
-  font-size: clamp(1.65rem, 2.6vw, 2.65rem);
-  font-weight: 800;
-  line-height: 1.08;
+  font-family: inherit;
+  font-size: clamp(1.74rem, 3.11vw, 3.32rem);
+  font-weight: 500;
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
@@ -695,16 +727,17 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-self: stretch;
-  gap: clamp(20px, 3vw, 34px);
+  gap: clamp(18px, 2.5vw, 28px);
   color: rgba(65, 52, 77, 0.84);
-  font-size: clamp(0.98rem, 1.12vw, 1.08rem);
+  font-size: clamp(0.94rem, 1.04vw, 1rem);
   line-height: 1.62;
 }
 
 .about-copy h2 {
   max-width: 640px;
   margin: 0;
-  font-size: clamp(1.65rem, 2.6vw, 2.65rem);
+  font-family: inherit;
+  font-size: clamp(1.52rem, 2.35vw, 2.35rem);
   line-height: 1.08;
 }
 
@@ -715,6 +748,39 @@ h3 {
 
 .about-text p {
   margin-bottom: 0;
+}
+
+.about-course-tile {
+  display: grid;
+  gap: 8px;
+  width: min(430px, 100%);
+  border: 1px solid rgba(84, 88, 140, 0.22);
+  border-radius: 10px;
+  background: rgba(255, 250, 248, 0.72);
+  padding: clamp(18px, 2.2vw, 24px);
+  color: var(--ink);
+  box-shadow: 0 18px 50px rgba(65, 52, 77, 0.07);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.about-course-tile:hover {
+  border-color: rgba(84, 88, 140, 0.46);
+  box-shadow: 0 24px 62px rgba(65, 52, 77, 0.11);
+  transform: translateY(-2px);
+}
+
+.about-course-tile span {
+  color: var(--rose);
+  font-size: 0.86rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.about-course-tile strong {
+  color: var(--ink);
+  font-size: clamp(1.04rem, 1.25vw, 1.2rem);
+  font-weight: 650;
+  line-height: 1.28;
 }
 
 .credentials {
@@ -846,7 +912,7 @@ h3 {
 
 .method-section .process-card h3 {
   margin-bottom: 10px;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: inherit;
   font-size: clamp(1.18rem, 1.6vw, 1.42rem);
   line-height: 1.2;
 }
@@ -1083,7 +1149,7 @@ h3 {
   padding: var(--section-space) var(--gutter);
   background:
     linear-gradient(rgba(30, 21, 82, 0.76), rgba(30, 21, 82, 0.76)),
-    url("/images/tmj-portret.jpg") center / cover;
+    url("/images/tmj-portret.jpg") center 20% / cover;
   color: #fffaf8;
 }
 
@@ -1238,11 +1304,37 @@ h3 {
   line-height: 1.6;
 }
 
+.reviews-marquee {
+  position: relative;
+  width: 100%;
+  margin-top: clamp(30px, 5vw, 58px);
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.reviews-track {
+  display: flex;
+  width: max-content;
+  animation: reviews-scroll 58s linear infinite;
+}
+
+.reviews-marquee:hover .reviews-track {
+  animation-play-state: paused;
+}
+
+.reviews-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  padding-right: 16px;
+}
+
 .review-card {
   display: grid;
   align-content: start;
   gap: 18px;
-  min-height: 280px;
+  flex: 0 0 clamp(258px, 25vw, 320px);
+  min-height: clamp(286px, 26vw, 336px);
   margin: 0;
   border-color: rgba(155, 91, 84, 0.16);
   background: rgba(255, 250, 248, 0.84);
@@ -1256,7 +1348,7 @@ h3 {
 }
 
 .review-card p {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-family: inherit;
   color: var(--ink);
   font-size: clamp(1.02rem, 1.15vw, 1.15rem);
   line-height: 1.42;
@@ -1288,6 +1380,16 @@ h3 {
   margin-top: clamp(22px, 3vw, 34px);
   color: var(--rose);
   font-weight: 900;
+}
+
+@keyframes reviews-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .shop-section {
@@ -1431,7 +1533,7 @@ h3 {
 }
 
 .site-footer strong {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  font-family: inherit;
   font-size: 1.4rem;
 }
 
@@ -1440,6 +1542,122 @@ h3 {
   max-width: 760px;
   margin: 0;
   color: rgba(255, 250, 248, 0.72);
+}
+
+.course-page {
+  min-height: 100svh;
+  background:
+    linear-gradient(180deg, rgba(225, 202, 196, 0.34), rgba(255, 250, 248, 0.98) 34%),
+    var(--paper);
+  color: var(--plum);
+}
+
+.course-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px var(--gutter);
+  border-bottom: 1px solid rgba(65, 52, 77, 0.12);
+  background: rgba(255, 250, 248, 0.82);
+}
+
+.course-page-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 28px);
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 800;
+}
+
+.course-page-nav a {
+  color: inherit;
+}
+
+.course-hero,
+.course-list-section,
+.course-page-footer {
+  width: min(1180px, calc(100% - 36px));
+  margin-inline: auto;
+}
+
+.course-hero {
+  display: grid;
+  gap: clamp(18px, 2vw, 26px);
+  padding: clamp(66px, 8vw, 118px) 0 clamp(34px, 5vw, 64px);
+}
+
+.course-hero h1 {
+  max-width: 960px;
+  color: var(--ink);
+  font-size: clamp(2.1rem, 4.4vw, 4.8rem);
+  font-weight: 550;
+  line-height: 1.02;
+}
+
+.course-hero p:not(.eyebrow) {
+  max-width: 760px;
+  color: rgba(65, 52, 77, 0.78);
+  font-size: clamp(1rem, 1.45vw, 1.22rem);
+  line-height: 1.7;
+}
+
+.course-list-section {
+  display: grid;
+  gap: clamp(18px, 2.2vw, 28px);
+  padding-bottom: clamp(62px, 8vw, 110px);
+}
+
+.course-year-group {
+  display: grid;
+  grid-template-columns: minmax(84px, 0.18fr) minmax(0, 1fr);
+  gap: clamp(18px, 4vw, 52px);
+  border: 1px solid rgba(65, 52, 77, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 250, 248, 0.78);
+  padding: clamp(22px, 3vw, 36px);
+  box-shadow: 0 18px 54px rgba(65, 52, 77, 0.06);
+}
+
+.course-year-group h2 {
+  color: var(--rose);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 650;
+  line-height: 1;
+}
+
+.course-list {
+  display: grid;
+  gap: 14px;
+}
+
+.course-list p {
+  position: relative;
+  margin: 0;
+  padding-left: 22px;
+  color: rgba(65, 52, 77, 0.82);
+  font-size: clamp(0.96rem, 1.08vw, 1.04rem);
+  line-height: 1.62;
+}
+
+.course-list p::before {
+  content: "";
+  position: absolute;
+  top: 0.78em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--gold);
+}
+
+.course-page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  padding-bottom: clamp(56px, 8vw, 88px);
 }
 
 .reveal {
@@ -1478,7 +1696,8 @@ h3 {
     transition-duration: 0.01ms !important;
   }
 
-  .marquee-track {
+  .marquee-track,
+  .reviews-track {
     animation: none !important;
     transform: none !important;
   }
@@ -1508,20 +1727,38 @@ h3 {
     padding-bottom: clamp(56px, 6vw, 86px);
   }
 
-  .about-grid,
   .split {
-    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 0.73fr) minmax(0, 1fr);
     align-items: center;
+  }
+
+  .about-section {
+    width: auto;
+    max-width: none;
+    margin-inline: var(--gutter);
+  }
+
+  .about-grid {
+    grid-template-columns: minmax(300px, 0.48fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: clamp(38px, 5vw, 76px);
+  }
+
+  .about-photo {
+    position: relative;
+    min-height: clamp(390px, 31vw, 510px);
+  }
+
+  .about-photo img {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
   }
 
   .contact-section {
     grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.96fr);
     align-items: start;
     gap: clamp(28px, 4vw, 46px);
-  }
-
-  .about-grid {
-    align-items: stretch;
   }
 
   .offer-feature {
@@ -1596,7 +1833,7 @@ h3 {
   }
 
   .hero-background::before {
-    background: url("/images/hero-mobile-justyna-6091.png") 56% center / cover no-repeat;
+    background: url("/images/justyna-hero-2.png") 76% center / cover no-repeat;
   }
 
   .hero-background::after {
@@ -1612,7 +1849,7 @@ h3 {
 
   .hero-background h1 {
     max-width: 100%;
-    font-size: clamp(2.08rem, 8.84vw, 2.6rem);
+    font-size: clamp(1.68rem, 7.16vw, 2.11rem);
     line-height: 1.02;
     overflow-wrap: normal;
     word-break: normal;
@@ -1702,6 +1939,25 @@ h3 {
   .cooperation-photos {
     grid-template-columns: 1fr;
   }
+
+  .course-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .course-page-nav {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .course-year-group {
+    grid-template-columns: 1fr;
+  }
+
+  .course-page-footer .primary-button,
+  .course-page-footer .secondary-button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 460px) {
@@ -1715,8 +1971,20 @@ h3 {
     padding-block: 9px;
   }
 
+  .hero-preview .header-cta {
+    margin-right: 0;
+  }
+
   .brand {
     min-width: 0;
+  }
+
+  .brand-name {
+    gap: 0.28em;
+  }
+
+  .brand .brand-title {
+    font-size: 0.42em;
   }
 
   .brand small {
@@ -1739,7 +2007,7 @@ h3 {
   }
 
   .hero-background::before {
-    background-position: 56% center;
+    background-position: 76% center;
   }
 
   .hero-media,

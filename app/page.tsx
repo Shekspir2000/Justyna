@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const bookingUrl =
   "https://www.znanylekarz.pl/justyna-jasinska-2/fizjoterapeuta/krakow";
@@ -38,25 +39,6 @@ const trustItems = [
   {
     title: "Certyfikowana terapeutka MTI IFOMPT",
     text: "terapia manualna, fizjoterapia stomatologiczna i pediatryczna",
-  },
-];
-
-const credentialItems = [
-  {
-    title: "MTI IFOMPT",
-    text: "certyfikowana terapeutka manualna według standardów IFOMPT",
-  },
-  {
-    title: "w trakcie MTII",
-    text: "kontynuacja szkolenia z terapii manualnej",
-  },
-  {
-    title: "Integracja Sensoryczna",
-    text: "terapia wspierająca rozwój i regulację dziecka",
-  },
-  {
-    title: "Akademia Fizjoterapii Stomatologicznej",
-    text: "fizjoterapia stomatologiczna, napięcia i praca z TMJ",
   },
 ];
 
@@ -129,28 +111,64 @@ const cooperationTopics = [
 
 const reviews = [
   {
+    author: "Karolina P.",
+    date: "30 lipca 2026",
+    context: "fizjoterapia stomatologiczna",
+    text: "Pacjentka docenia profesjonalizm, dużą wiedzę i spokojną komunikację podczas przygotowania do operacji ortognatycznej oraz rehabilitacji po zabiegu.",
+  },
+  {
     author: "KBM",
-    date: "26 lipca 2026",
+    date: "7 lipca 2026",
     context: "wizyta z niemowlęciem",
     text: "Pacjentka podkreśla dokładny wywiad, spokojne badanie i konkretne ćwiczenia do domu. Po zastosowaniu zaleceń zauważyła poprawę karmienia i snu dziecka.",
   },
   {
     author: "Monika W.",
-    date: "26 lipca 2026",
+    date: "3 lipca 2026",
     context: "fizjoterapia dziecka",
-    text: "Rodzic docenia delikatne podejście do małego dziecka, dużą wiedzę oraz instrukcje pokazane tak, aby można było bezpiecznie kontynuować pracę w domu.",
+    text: "Rodzic zwraca uwagę na świetne podejście do dziecka, zaangażowanie oraz ćwiczenia dobrane tak, aby mały pacjent chętnie z nimi pracował.",
   },
   {
-    author: "K.W.",
-    date: "26 lipca 2026",
+    author: "Nadia",
+    date: "27 czerwca 2026",
+    context: "pierwsza wizyta dziecka",
+    text: "Opinia podkreśla miłą atmosferę, zaangażowanie i dobre podejście do dziecka już podczas pierwszego spotkania.",
+  },
+  {
+    author: "KW",
+    date: "25 czerwca 2026",
     context: "fizjoterapia stomatologiczna",
     text: "Pacjentka zwraca uwagę na spokojną atmosferę, profesjonalizm i jasne wyjaśnienie celu ćwiczeń przy pracy ze stawem skroniowo-żuchwowym.",
   },
   {
+    author: "Justyna",
+    date: "25 czerwca 2026",
+    context: "fizjoterapia dziecka",
+    text: "Rodzic opisuje kompleksowe podejście, równoległą pracę w kilku obszarach i zauważalną poprawę u dziecka po wcześniejszych poszukiwaniach pomocy.",
+  },
+  {
     author: "Ewelina",
-    date: "24 lipca 2026",
+    date: "17 czerwca 2026",
     context: "ocena rozwoju dziecka",
     text: "Opinia opisuje całościowe badanie dziecka, dokładne omówienie zaleceń oraz wyjaśnienie, co obserwować i jak wspierać rozwój w domu.",
+  },
+  {
+    author: "MM",
+    date: "15 czerwca 2026",
+    context: "fizjoterapia stomatologiczna",
+    text: "Pacjentka docenia skupienie, bieżące wyjaśnianie przebiegu terapii oraz zestaw ćwiczeń do domu, po których zauważyła pierwszą poprawę.",
+  },
+  {
+    author: "Kamila",
+    date: "9 czerwca 2026",
+    context: "fizjoterapia dziecka",
+    text: "Rodzic podkreśla wartościowe wizyty i bardzo dobre podejście do dziecka podczas kolejnych spotkań.",
+  },
+  {
+    author: "Iwona",
+    date: "8 czerwca 2026",
+    context: "pierwsza wizyta dziecka",
+    text: "Opinia zwraca uwagę na profesjonalizm oraz praktyczne ćwiczenia, które rodzic mógł nagrać i łatwiej wykonywać w domu.",
   },
 ];
 
@@ -159,7 +177,10 @@ export default function Home() {
     <main className="hero-preview">
       <header className="site-header" aria-label="Główna nawigacja">
         <a className="brand" href="#top" aria-label="Justyna Jasińska, strona główna">
-          <span>Justyna Jasińska</span>
+          <span className="brand-name">
+            <small className="brand-title">mgr fizjoterapii</small>
+            Justyna Jasińska
+          </span>
           <small>Fizjoterapia pediatryczna i stomatologiczna</small>
         </a>
         <nav className="desktop-nav" aria-label="Sekcje strony">
@@ -190,9 +211,6 @@ export default function Home() {
           <div className="hero-actions">
             <a className="primary-button" href={bookingUrl}>
               Umów się na wizytę
-            </a>
-            <a className="secondary-button" href="#metoda">
-              Zobacz, jak pracuję
             </a>
           </div>
           <ul className="trust-strip" aria-label="Główne obszary pomocy">
@@ -226,25 +244,24 @@ export default function Home() {
       </section>
 
       <section className="section about-section" id="o-mnie">
-        <div className="about-editorial-intro reveal">
-          <p className="eyebrow">O mnie</p>
-          <blockquote>
-            {keepShortWords("Najważniejsze jest dla mnie, aby rodzic rozumiał, co dzieje się z dzieckiem, skąd mogą wynikać trudności i jakie kroki warto podjąć dalej")}
-          </blockquote>
-        </div>
         <div className="about-grid">
           <div className="about-photo reveal">
             <Image
-              src="/images/justyna-pediatric-clinic-gray-scrubs.png"
+              src="/images/about-justyna-o-mnie.png"
               alt="Justyna Jasińska w jasnym gabinecie fizjoterapii pediatrycznej"
-              width={1066}
-              height={1600}
+              width={1023}
+              height={1537}
               unoptimized
               sizes="(min-width: 820px) 42vw, 100vw"
             />
           </div>
           <div className="about-copy reveal">
-            <h2>{keepShortWords("Spokojna diagnoza, konkretne wyjaśnienie i terapia dobrana do potrzeb")}</h2>
+            <div className="about-editorial-intro">
+              <p className="eyebrow">O mnie</p>
+              <blockquote>
+                {keepShortWords("Najważniejsze jest dla mnie, aby rodzic rozumiał, co dzieje się z dzieckiem, skąd mogą wynikać trudności i jakie kroki warto podjąć dalej")}
+              </blockquote>
+            </div>
             <div className="about-text">
               <p>
                 {keepShortWords("Od ponad 10 lat pracuję jako fizjoterapeutka, zdobywając doświadczenie w placówkach ortopedycznych, poradni pedagogiczno-psychologicznej oraz centrum stomatologicznym. Jestem certyfikowaną Terapeutką Manualną MTI według standardów IFOMPT, terapeutką integracji sensorycznej oraz absolwentką Akademii Fizjoterapii Stomatologicznej. Obecnie kontynuuję szkolenie MTII, a od 2021 roku asystuję na kursach Terapii Manualnej NOMPT PL.")}
@@ -256,14 +273,10 @@ export default function Home() {
                 {keepShortWords("Moim celem jest znalezienie przyczyny dolegliwości oraz jasne wyjaśnienie jej pacjentowi lub rodzicom dziecka. Dzięki temu terapia staje się bardziej zrozumiała, a rodzic może aktywnie uczestniczyć w procesie wspierania rozwoju dziecka.")}
               </p>
             </div>
-            <div className="credentials">
-              {credentialItems.map((item) => (
-                <div key={item.title}>
-                  <strong>{keepShortWords(item.title)}</strong>
-                  <span>{keepShortWords(item.text)}</span>
-                </div>
-              ))}
-            </div>
+            <Link className="about-course-tile" href="/kursy">
+              <span>Kursy i szkolenia</span>
+              <strong>{keepShortWords("Zobacz rozwój zawodowy Justyny")}</strong>
+            </Link>
           </div>
         </div>
       </section>
@@ -348,20 +361,26 @@ export default function Home() {
           <p className="eyebrow">Opinie i zaufanie</p>
           <h2>{keepShortWords("Rodzice i pacjenci doceniają spokojne tłumaczenie, dokładność i jasny plan po wizycie")}</h2>
           <p className="section-lead">
-            {keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję krótkie streszczenia czterech opinii pacjentów.")}
+            {keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję krótkie streszczenia dziesięciu opinii pacjentów.")}
           </p>
         </div>
-        <div className="review-grid">
-          {reviews.map((review) => (
-            <article className="review-card reveal" key={`${review.author}-${review.date}`}>
-              <span>{keepShortWords(review.context)}</span>
-              <p>{keepShortWords(review.text)}</p>
-              <footer>
-                <strong>{review.author}</strong>
-                <small>{review.date}</small>
-              </footer>
-            </article>
-          ))}
+        <div className="reviews-marquee" aria-label="Przesuwane opinie pacjentów">
+          <div className="reviews-track">
+            {[0, 1].map((group) => (
+              <div className="reviews-group" aria-hidden={group === 1} key={group}>
+                {reviews.map((review) => (
+                  <article className="review-card" key={`${group}-${review.author}-${review.date}`}>
+                    <span>{keepShortWords(review.context)}</span>
+                    <p>{keepShortWords(review.text)}</p>
+                    <footer>
+                      <strong>{review.author}</strong>
+                      <small>{review.date}</small>
+                    </footer>
+                  </article>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
         <a className="reviews-source reveal" href={`${bookingUrl}#profile-reviews`}>
           Zobacz opinie na ZnanyLekarz
