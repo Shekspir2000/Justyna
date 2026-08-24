@@ -169,6 +169,30 @@ main {
   padding: 8px 0;
 }
 
+.nav-social {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0 !important;
+  color: inherit;
+  opacity: 0.92;
+}
+
+.nav-social:hover {
+  opacity: 1;
+}
+
+.nav-social-icon {
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  mask: url("/images/instagram-icon.svg") center / contain no-repeat;
+  -webkit-mask: url("/images/instagram-icon.svg") center / contain no-repeat;
+}
+
 .desktop-nav a:hover {
   color: var(--rose);
 }
@@ -1136,7 +1160,7 @@ h3 {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: var(--gold);
+  background: var(--rose);
   transform: translateY(-50%);
 }
 
@@ -1394,9 +1418,7 @@ h3 {
 
 .shop-section {
   padding: clamp(70px, 8vw, 116px) var(--gutter);
-  background:
-    linear-gradient(135deg, rgba(30, 21, 82, 0.94), rgba(65, 52, 77, 0.9)),
-    var(--ink);
+  background: var(--blue);
   color: #fffaf8;
 }
 
@@ -1414,7 +1436,7 @@ h3 {
 
 .shop-copy .eyebrow {
   margin-bottom: 0;
-  color: var(--gold);
+  color: var(--rose);
   font-size: clamp(0.95rem, 1.21vw, 1.11rem);
   text-transform: none;
 }
@@ -1435,6 +1457,7 @@ h3 {
 }
 
 .contact-copy p {
+  max-width: 720px;
   color: rgba(65, 52, 77, 0.8);
   font-size: 1.06rem;
 }
@@ -1442,6 +1465,7 @@ h3 {
 .contact-list {
   display: grid;
   gap: 10px;
+  max-width: 680px;
   margin-top: 22px;
 }
 
@@ -1756,9 +1780,9 @@ h3 {
   }
 
   .contact-section {
-    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.96fr);
+    grid-template-columns: minmax(0, 780px);
+    justify-content: center;
     align-items: start;
-    gap: clamp(28px, 4vw, 46px);
   }
 
   .offer-feature {

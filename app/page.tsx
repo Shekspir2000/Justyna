@@ -184,6 +184,15 @@ export default function Home() {
           <small>Fizjoterapia pediatryczna i stomatologiczna</small>
         </a>
         <nav className="desktop-nav" aria-label="Sekcje strony">
+          <a
+            className="nav-social"
+            href="https://www.instagram.com/fizjoterapia_z_glowa/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram Justyny Jasińskiej"
+          >
+            <span className="nav-social-icon" aria-hidden="true" />
+          </a>
           {navItems.map(([label, href]) =>
             href ? (
               <a key={label} href={href}>
@@ -461,47 +470,12 @@ export default function Home() {
           </p>
           <div className="contact-list" aria-label="Dane kontaktowe">
             <a href={bookingUrl}>ZnanyLekarz: profil Justyny Jasińskiej</a>
-            <a href="tel:+48000000000">Telefon: [TELEFON]</a>
-            <a href="mailto:kontakt@justynajasinskafizjo.pl">E-mail: [E-MAIL]</a>
-            <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram: [INSTAGRAM]</a>
-            <span>Adres gabinetu: [ADRES GABINETU], Kraków</span>
+            <a href="mailto:J.Jasinska.fizjo@gmail.com">E-mail: J.Jasinska.fizjo@gmail.com</a>
+            <a href="https://www.instagram.com/fizjoterapia_z_glowa/" target="_blank" rel="noreferrer">
+              Instagram: fizjoterapia_z_glowa
+            </a>
           </div>
         </div>
-        <form className="contact-form reveal" aria-label="Formularz kontaktowy">
-          <label>
-            {keepShortWords("Imię i nazwisko")}
-            <input name="name" type="text" autoComplete="name" placeholder="Anna Nowak" />
-          </label>
-          <label>
-            E-mail
-            <input name="email" type="email" autoComplete="email" placeholder="anna@email.pl" />
-          </label>
-          <label>
-            Telefon
-            <input name="phone" type="tel" autoComplete="tel" placeholder="+48 ..." />
-          </label>
-          <label>
-            Temat
-            <select name="topic" defaultValue="">
-              <option value="" disabled>Wybierz temat</option>
-              <option>{keepShortWords("Wizyta z niemowlęciem")}</option>
-              <option>Fizjoterapia dziecka</option>
-              <option>Bruksizm / TMJ</option>
-              <option>Współpraca logopedyczna</option>
-            </select>
-          </label>
-          <label className="full">
-            Wiadomość
-            <textarea name="message" rows={5} placeholder="Napisz, co chcesz skonsultować." />
-          </label>
-          <label className="rodo full">
-            <input type="checkbox" name="rodo" />
-            <span>{keepShortWords("Wyrażam zgodę na kontakt w odpowiedzi na przesłaną wiadomość oraz przetwarzanie danych w tym celu. Szczegóły RODO zostaną uzupełnione w polityce prywatności.")}</span>
-          </label>
-          <button className="primary-button full" type="submit">
-            Wyślij wiadomość
-          </button>
-        </form>
       </section>
 
       <footer className="site-footer">
