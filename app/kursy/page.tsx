@@ -90,7 +90,6 @@ export default function CoursesPage() {
       <header className="course-page-header">
         <Link className="brand" href="/#top" aria-label="Powrót na stronę główną">
           <span className="brand-name">
-            <small className="brand-title">mgr fizjoterapii</small>
             Justyna Jasińska
           </span>
           <small>Fizjoterapia pediatryczna i stomatologiczna</small>

@@ -178,7 +178,6 @@ export default function Home() {
       <header className="site-header" aria-label="Główna nawigacja">
         <a className="brand" href="#top" aria-label="Justyna Jasińska, strona główna">
           <span className="brand-name">
-            <small className="brand-title">mgr fizjoterapii</small>
             Justyna Jasińska
           </span>
           <small>Fizjoterapia pediatryczna i stomatologiczna</small>
@@ -291,15 +290,15 @@ export default function Home() {
       </section>
 
       <section className="section offer-section" id="oferta">
-        <div className="section-heading reveal">
-          <p className="eyebrow">Oferta</p>
-          <h2>{keepShortWords("Wybierz obszar, z którym chcesz przyjść na wizytę")}</h2>
-          <p className="section-lead">
-            {keepShortWords("Najmocniej wspieram niemowlęta i małe dzieci. Pracuję też z wadami postawy, napięciami żuchwy, bruksizmem, TMJ oraz w procesach prowadzonych wspólnie z logopedą.")}
-          </p>
-        </div>
         <div className="offer-feature reveal">
-          <div>
+          <div className="offer-feature-copy">
+            <div className="section-heading">
+              <p className="eyebrow">Oferta</p>
+              <h2>{keepShortWords("Wybierz obszar, z którym chcesz przyjść na wizytę")}</h2>
+              <p className="section-lead">
+                {keepShortWords("Najmocniej wspieram niemowlęta i małe dzieci. Pracuję też z wadami postawy, napięciami żuchwy, bruksizmem, TMJ oraz w procesach prowadzonych wspólnie z logopedą.")}
+              </p>
+            </div>
             <p className="eyebrow">Pediatria na pierwszym miejscu</p>
             <h3>{keepShortWords("Jeśli nie masz pewności, czy rozwój dziecka przebiega prawidłowo, zaczynamy od spokojnego sprawdzenia sytuacji.")}</h3>
             <p>
@@ -307,8 +306,8 @@ export default function Home() {
             </p>
           </div>
           <Image
-            src="/images/offer-img-5205-clear.jpg"
-            alt="Delikatna praca manualna w gabinecie fizjoterapii"
+            src="/images/offer-baby-therapy.png"
+            alt="Fizjoterapia niemowlęcia w gabinecie"
             width={1350}
             height={1800}
             unoptimized
