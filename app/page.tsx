@@ -322,6 +322,16 @@ export default function Home() {
         <div className="offer-paths">
           {offerGroups.map((item) => (
             <article className="offer-path reveal" key={item.title}>
+              <div className="offer-path-media">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  width={1200}
+                  height={900}
+                  unoptimized
+                  sizes="(min-width: 1100px) 31vw, (min-width: 700px) 50vw, 100vw"
+                />
+              </div>
               <div className="offer-path-copy">
                 <h3>{keepShortWords(item.title)}</h3>
                 <p>{keepShortWords(item.text)}</p>
@@ -331,14 +341,6 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-              <Image
-                src={item.image}
-                alt={item.alt}
-                width={1200}
-                height={900}
-                unoptimized
-                sizes="(min-width: 900px) 38vw, 100vw"
-              />
             </article>
           ))}
         </div>
