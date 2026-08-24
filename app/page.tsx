@@ -190,6 +190,8 @@ const reviews = [
   },
 ];
 
+const reviewLoop = [...reviews, ...reviews];
+
 export default function Home() {
   return (
     <main className="hero-preview">
@@ -374,15 +376,15 @@ export default function Home() {
           <p className="eyebrow">Opinie i zaufanie</p>
           <h2>{keepShortWords("Rodzice i pacjenci doceniają spokojne tłumaczenie, dokładność i jasny plan po wizycie")}</h2>
           <p className="section-lead">
-            {keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję krótkie streszczenia dziesięciu opinii pacjentów.")}
+            {keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję dwadzieścia kafli z krótkimi streszczeniami opinii pacjentów.")}
           </p>
         </div>
         <div className="reviews-marquee" aria-label="Przesuwane opinie pacjentów">
           <div className="reviews-track">
             {[0, 1].map((group) => (
               <div className="reviews-group" aria-hidden={group === 1} key={group}>
-                {reviews.map((review) => (
-                  <article className="review-card" key={`${group}-${review.author}-${review.date}`}>
+                {reviewLoop.map((review, index) => (
+                  <article className="review-card" key={`${group}-${index}-${review.author}-${review.date}`}>
                     <span>{keepShortWords(review.context)}</span>
                     <p>{keepShortWords(review.text)}</p>
                     <footer>

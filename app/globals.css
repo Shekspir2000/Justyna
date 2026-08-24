@@ -1396,7 +1396,8 @@ h3 {
 .reviews-track {
   display: flex;
   width: max-content;
-  animation: reviews-scroll 118s linear infinite;
+  min-width: max-content;
+  animation: reviews-scroll 306s linear infinite;
   will-change: transform;
 }
 
@@ -1408,6 +1409,7 @@ h3 {
   display: flex;
   flex: 0 0 auto;
   gap: 16px;
+  min-width: max-content;
   padding-right: 16px;
 }
 
