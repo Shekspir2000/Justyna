@@ -44,28 +44,46 @@ const trustItems = [
 
 const offerGroups = [
   {
-    title: "Niemowlęta i małe dzieci",
-    label: "Najczęstszy obszar pracy",
-    text: "Spokojna ocena rozwoju, napięć, asymetrii, karmienia, komfortu leżenia, obracania i pierwszych wzorców ruchu.",
-    items: ["fizjoterapia niemowląt", "kontrola rozwoju małego dziecka", "zalecenia zrozumiałe dla rodzica"],
+    title: "Fizjoterapia niemowląt",
+    text: "Wspieram prawidłowy rozwój ruchowy niemowląt, pomagając w trudnościach pojawiających się na różnych etapach rozwoju. Terapia jest zawsze dobierana indywidualnie do potrzeb dziecka i jego aktualnych możliwości.",
+    image: "/images/offer-infants-therapy.jpg",
+    alt: "Fizjoterapia niemowląt w gabinecie",
+    items: [
+      "asymetria ułożeniowa i preferowanie jednej strony",
+      "nieprawidłowe napięcie mięśniowe",
+      "trudności z unoszeniem i kontrolą głowy",
+      "opóźniony lub nieprawidłowy rozwój ruchowy",
+      "problemy z obrotem, podporami, siadem i raczkowaniem",
+      "kręcz szyi",
+      "KISS Syndrom",
+      "kolki i problemy z karmieniem u niemowląt",
+    ],
   },
   {
-    title: "Dzieci i wady postawy",
-    label: "Rozwój, ruch i nawyki",
-    text: "Praca z trudnościami ruchowymi, napięciami, opóźnieniami wzorców motorycznych oraz postawą starszych dzieci.",
-    items: ["fizjoterapia dzieci", "wady postawy", "ćwiczenia możliwe do wdrożenia w domu"],
+    title: "Fizjoterapia dzieci",
+    text: "Pomagam dzieciom w kształtowaniu prawidłowej postawy ciała i pracy stóp, wspierając ich harmonijny rozwój oraz zapobiegając pogłębianiu się nieprawidłowości. Terapia obejmuje zarówno ćwiczenia, jak i naukę zaleceń do domu.",
+    image: "/images/offer-children-therapy.png",
+    alt: "Fizjoterapia dzieci i praca z rozwojem ruchowym",
+    items: [
+      "wady i zaburzenia postawy ciała",
+      "skolioza i asymetrie",
+      "płaskostopie i inne nieprawidłowości ustawienia stóp",
+      "koślawość lub szpotawość kolan",
+      "nieprawidłowe wzorce chodu i ruchu",
+    ],
   },
   {
-    title: "Staw skroniowo-żuchwowy i bruksizm",
-    label: "Fizjoterapia stomatologiczna / TMJ",
-    text: "Terapia napięć mięśni żucia, twarzy, szyi i obręczy barkowej przy zaciskaniu zębów, bólu, klikaniu lub przeciążeniu żuchwy.",
-    items: ["bruksizm i napięcia mięśni żucia", "fizjoterapia stomatologiczna", "przygotowanie do leczenia ortodontycznego"],
-  },
-  {
-    title: "Współpraca z logopedą",
-    label: "Proces zespołowy",
-    text: "Wsparcie dzieci przed podcięciem wędzidełka, przy trudnościach karmienia, napięciach i funkcji jamy ustnej oraz szkolenia dla gabinetów logopedycznych.",
-    items: ["przygotowanie przed podcięciem wędzidełka", "współpraca fizjoterapeuty i logopedy", "szkolenia dla gabinetów logopedycznych"],
+    title: "Fizjoterapia stomatologiczna i współpraca z logopedą",
+    text: "Pomagam w terapii dolegliwości związanych z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
+    image: "/images/offer-dental-therapy.jpg",
+    alt: "Fizjoterapia stomatologiczna i praca ze stawem skroniowo-żuchwowym",
+    items: [
+      "bruksizm i zaciskanie zębów",
+      "bóle i napięcia w obrębie żuchwy, twarzy i szyi",
+      "zaburzenia i ograniczenia ruchomości stawu skroniowo-żuchwowego",
+      "napięcia mięśniowe w obrębie twarzy i jamy ustnej",
+      "wsparcie terapii logopedycznej i miofunkcjonalnej",
+    ],
   },
 ];
 
@@ -294,37 +312,33 @@ export default function Home() {
           <div className="offer-feature-copy">
             <div className="section-heading">
               <p className="eyebrow">Oferta</p>
-              <h2>{keepShortWords("Wybierz obszar, z którym chcesz przyjść na wizytę")}</h2>
+              <h2>{keepShortWords("W czym mogę pomóc?")}</h2>
               <p className="section-lead">
-                {keepShortWords("Najmocniej wspieram niemowlęta i małe dzieci. Pracuję też z wadami postawy, napięciami żuchwy, bruksizmem, TMJ oraz w procesach prowadzonych wspólnie z logopedą.")}
+                {keepShortWords("Od napięć i asymetrii u dzieci po bruksizm i problemy stawu skroniowo-żuchwowego - każdą terapię dobieram indywidualnie, szukając źródła problemu.")}
               </p>
             </div>
-            <p className="eyebrow">Pediatria na pierwszym miejscu</p>
-            <h3>{keepShortWords("Jeśli nie masz pewności, czy rozwój dziecka przebiega prawidłowo, zaczynamy od spokojnego sprawdzenia sytuacji.")}</h3>
-            <p>
-              {keepShortWords("Podczas wizyty dokładnie przyglądam się napięciom, asymetrii, karmieniu, komfortowi leżenia, obracania oraz pierwszym wzorcom ruchu. Tłumaczę wszystko prostym językiem, aby rodzic wyszedł z gabinetu z jasnym planem działania, a nie z poczuciem niepokoju i listą trudnych pojęć.")}
-            </p>
           </div>
-          <Image
-            src="/images/offer-baby-therapy.png"
-            alt="Fizjoterapia niemowlęcia w gabinecie"
-            width={1350}
-            height={1800}
-            unoptimized
-            sizes="(min-width: 820px) 50vw, 100vw"
-          />
         </div>
         <div className="offer-paths">
           {offerGroups.map((item) => (
             <article className="offer-path reveal" key={item.title}>
-              <span>{keepShortWords(item.label)}</span>
-              <h3>{keepShortWords(item.title)}</h3>
-              <p>{keepShortWords(item.text)}</p>
-              <ul>
-                {item.items.map((point) => (
-                  <li key={point}>{keepShortWords(point)}</li>
-                ))}
-              </ul>
+              <div className="offer-path-copy">
+                <h3>{keepShortWords(item.title)}</h3>
+                <p>{keepShortWords(item.text)}</p>
+                <ul>
+                  {item.items.map((point) => (
+                    <li key={point}>{keepShortWords(point)}</li>
+                  ))}
+                </ul>
+              </div>
+              <Image
+                src={item.image}
+                alt={item.alt}
+                width={1200}
+                height={900}
+                unoptimized
+                sizes="(min-width: 900px) 38vw, 100vw"
+              />
             </article>
           ))}
         </div>
@@ -351,16 +365,6 @@ export default function Home() {
               </article>
             ))}
           </div>
-
-          <aside className="ifompt-panel reveal" aria-label="Wyjaśnienie standardu IFOMPT">
-            <div className="ifompt-mark">
-              <strong>IFOMPT</strong>
-              <span>International Federation of Orthopaedic Manipulative Physical Therapists</span>
-            </div>
-            <p>
-              {keepShortWords("IFOMPT to międzynarodowa federacja wyznaczająca standardy zaawansowanej fizjoterapii ortopedyczno-manualnej. Certyfikacja w tym nurcie oznacza pracę opartą na dokładnym badaniu, bezpieczeństwie, rozumowaniu klinicznym i terapii dobranej do przyczyny problemu, a nie wyłącznie do miejsca bólu.")}
-            </p>
-          </aside>
         </div>
       </section>
 
