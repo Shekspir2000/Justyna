@@ -301,7 +301,7 @@ export default function Home() {
             </div>
             <Link className="about-course-tile" href="/kursy">
               <span>Kursy i szkolenia</span>
-              <strong>{keepShortWords("Zobacz rozwój zawodowy Justyny")}</strong>
+              <strong>{keepShortWords("Zobacz mój rozwój zawodowy")}</strong>
             </Link>
           </div>
         </div>
@@ -349,8 +349,7 @@ export default function Home() {
       <section className="method-section" id="metoda">
         <div className="section method-inner">
           <div className="section-heading method-heading reveal">
-            <p className="eyebrow">Sposób pracy</p>
-            <h2>{keepShortWords("Pracuję z przyczyną, nie tylko z objawem")}</h2>
+            <p className="eyebrow">Jak wygląda wizyta</p>
             <p className="section-lead">
               {keepShortWords("Każda wizyta ma spokojny, czytelny rytm: od rozmowy i badania, przez terapię, po zalecenia, które rodzic lub pacjent naprawdę rozumie.")}
             </p>
@@ -473,13 +472,20 @@ export default function Home() {
           <p>
             {keepShortWords("Napisz krótko, co Cię niepokoi. Formularz nie zastępuje wizyty, ale pomaga ustalić, czy fizjoterapia pediatryczna, stomatologiczna lub współpraca z logopedą będzie dobrym kierunkiem.")}
           </p>
-          <div className="contact-list" aria-label="Dane kontaktowe">
-            <a href={bookingUrl}>ZnanyLekarz: profil Justyny Jasińskiej</a>
-            <a href="mailto:J.Jasinska.fizjo@gmail.com">E-mail: J.Jasinska.fizjo@gmail.com</a>
-            <a href="https://www.instagram.com/fizjoterapia_z_glowa/" target="_blank" rel="noreferrer">
-              Instagram: fizjoterapia_z_glowa
-            </a>
-          </div>
+        </div>
+        <div className="contact-list reveal" aria-label="Dane kontaktowe">
+          <a className="contact-card" href={bookingUrl}>
+            <span>ZnanyLekarz</span>
+            <strong>Profil Justyny Jasińskiej</strong>
+          </a>
+          <a className="contact-card" href="mailto:j.jasinska@gmail.com">
+            <span>E-mail</span>
+            <strong>j.jasinska@gmail.com</strong>
+          </a>
+          <a className="contact-card" href="https://www.instagram.com/fizjoterapia_z_glowa/" target="_blank" rel="noreferrer">
+            <span>Instagram</span>
+            <strong>fizjoterapia_z_glowa</strong>
+          </a>
         </div>
       </section>
 
