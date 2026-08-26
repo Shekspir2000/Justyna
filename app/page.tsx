@@ -21,7 +21,7 @@ const marqueeItems = [
   "fizjoterapia dzieci",
   "wady postawy",
   "bruksizm",
-  "TMJ",
+  "KISS Syndrom",
   "fizjoterapia stomatologiczna",
   "terapia manualna",
   "współpraca z logopedą",
@@ -30,15 +30,15 @@ const marqueeItems = [
 const trustItems = [
   {
     title: "10+ lat doświadczenia",
-    text: "w pracy z dziećmi, niemowlętami i pacjentami ortopedycznymi",
+    text: "w pracy jako fizjoterapeuta.",
   },
   {
     title: "200+ zadowolonych pacjentów",
     text: "objętych indywidualną fizjoterapią i diagnostyką",
   },
   {
-    title: "Certyfikowana terapeutka MTI IFOMPT",
-    text: "terapia manualna, fizjoterapia stomatologiczna i pediatryczna",
+    title: "Certyfikowana terapeutka MT I NOMPT PL",
+    text: "kursu wg standardów IFOMPT",
   },
 ];
 
@@ -73,7 +73,7 @@ const offerGroups = [
     ],
   },
   {
-    title: "Fizjoterapia stomatologiczna i współpraca z logopedą",
+    title: "FIZJOTERAPIA STOMATOLOGICZNA",
     text: "Pomagam w terapii dolegliwości związanych z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
     image: "/images/offer-dental-therapy.jpg",
     alt: "Fizjoterapia stomatologiczna i praca ze stawem skroniowo-żuchwowym",
@@ -84,6 +84,13 @@ const offerGroups = [
       "napięcia mięśniowe w obrębie twarzy i jamy ustnej",
       "wsparcie terapii logopedycznej i miofunkcjonalnej",
     ],
+  },
+  {
+    title: "SZKOLENIA DLA GABINETÓW LOGOPEDYCZNYCH",
+    text: "Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci i niemowląt. Pokazuję, kiedy warto włączyć fizjoterapię i jak planować wspólne działania terapeutyczne.",
+    image: "/images/offer-logopedics-training.jpg",
+    alt: "Szkolenie dla gabinetów logopedycznych z pracy fizjoterapeutycznej",
+    items: [],
   },
 ];
 
@@ -231,10 +238,13 @@ export default function Home() {
 
       <section className="hero hero-background" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">{keepShortWords("Fizjoterapia niemowląt, dzieci i stawu skroniowo-żuchwowego w Krakowie")}</p>
-          <h1>{keepShortWords("Pomagam znaleźć przyczynę problemu, a nie tylko łagodzić objawy")}</h1>
+          <p className="eyebrow">{keepShortWords("Fizjoterapia niemowląt, dzieci i stawów skroniowo-żuchwowych")}</p>
+          <h1>{keepShortWords("Pomagam znaleźć przyczynę Twoich dolegliwości.")}</h1>
           <p className="lead">
-            {keepShortWords("Łączę fizjoterapię pediatryczną, stomatologiczną, terapię manualną i współpracę z logopedą, aby wspierać prawidłowy rozwój dziecka oraz komfort funkcjonowania pacjentów z napięciami, bruksizmem i problemami stawu skroniowo-żuchwowego.")}
+            {keepShortWords("Łącząc fizjoterapię pediatryczną i stomatologiczną, terapię manualną oraz współpracę z logopedą szukam zależności, które mogą stać za napięciem, asymetrią, problemami z postawą, funkcją jamy ustnej czy bruksizmem. Patrzę na pacjenta całościowo, żeby zrozumieć nie tylko ")}
+            <em>co</em>
+            {keepShortWords(" się dzieje, ale przede wszystkim ")}
+            <em>dlaczego</em>.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href={bookingUrl}>
@@ -287,18 +297,18 @@ export default function Home() {
             <div className="about-editorial-intro">
               <p className="eyebrow">O mnie</p>
               <blockquote>
-                {keepShortWords("Najważniejsze jest dla mnie, aby rodzic rozumiał, co dzieje się z dzieckiem, skąd mogą wynikać trudności i jakie kroki warto podjąć dalej")}
+                {keepShortWords("Najważniejsze jest dla mnie, aby rodzic rozumiał, co dzieje się z dzieckiem, skąd mogą wynikać trudności i jakie kroki warto podjąć dalej.")}
               </blockquote>
             </div>
             <div className="about-text">
               <p>
-                {keepShortWords("Od ponad 10 lat pracuję jako fizjoterapeutka, zdobywając doświadczenie w placówkach ortopedycznych, poradni pedagogiczno-psychologicznej oraz centrum stomatologicznym. Jestem certyfikowaną Terapeutką Manualną MTI według standardów IFOMPT, terapeutką integracji sensorycznej oraz absolwentką Akademii Fizjoterapii Stomatologicznej. Obecnie kontynuuję szkolenie MTII, a od 2021 roku asystuję na kursach Terapii Manualnej NOMPT PL.")}
+                {keepShortWords("Od ponad 10 lat pracuję jako fizjoterapeutka, zdobywając doświadczenie w placówkach ortopedycznych, poradni pedagogiczno-psychologicznej oraz centrach stomatologicznych. Jestem certyfikowaną Terapeutką Manualną MT I NOMPT PL według standardów IFOMPT, terapeutką integracji sensorycznej oraz absolwentką Akademii Fizjoterapii Stomatologicznej. Obecnie kontynuuję szkolenie MT II NOMPT PL.")}
               </p>
               <p>
-                {keepShortWords("W gabinecie pracuję z niemowlętami, dziećmi i pacjentami z problemami w obrębie stawu skroniowo-żuchwowego. Łączę diagnostykę manualną, wiedzę pediatryczną, fizjoterapię stomatologiczną i współpracę z logopedami, aby patrzeć na problem szerzej niż tylko przez pryzmat pojedynczego objawu.")}
+                {keepShortWords("W gabinecie pracuję z niemowlętami, dziećmi i pacjentami z problemami w obrębie stawów skroniowo-żuchwowych. Łączę pracę manualną, wiedzę pediatryczną, fizjoterapię stomatologiczną i współpracę z logopedami, aby patrzeć na problem szerzej niż tylko przez pryzmat pojedynczego problemu, z jakim zgłasza się do mnie pacjent.")}
               </p>
               <p>
-                {keepShortWords("Moim celem jest znalezienie przyczyny dolegliwości oraz jasne wyjaśnienie jej pacjentowi lub rodzicom dziecka. Dzięki temu terapia staje się bardziej zrozumiała, a rodzic może aktywnie uczestniczyć w procesie wspierania rozwoju dziecka.")}
+                {keepShortWords("Wspieram dzieci od niemowląt do wieku szkolnego, patrząc na ich ciało jako całość — ruch, postawę, napięcie i funkcje. Moim celem jest znalezienie przyczyny dolegliwości oraz jasne wyjaśnienie jej pacjentowi lub rodzicom dziecka. Dzięki temu terapia staje się bardziej zrozumiała, a rodzic może aktywnie uczestniczyć w procesie wspierania rozwoju dziecka.")}
               </p>
             </div>
             <Link className="about-course-tile" href="/kursy">
@@ -337,11 +347,13 @@ export default function Home() {
               <div className="offer-path-copy">
                 <h3>{keepShortWords(item.title)}</h3>
                 <p>{keepShortWords(item.text)}</p>
-                <ul>
-                  {item.items.map((point) => (
-                    <li key={point}>{keepShortWords(point)}</li>
-                  ))}
-                </ul>
+                {item.items.length > 0 ? (
+                  <ul>
+                    {item.items.map((point) => (
+                      <li key={point}>{keepShortWords(point)}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </article>
           ))}
@@ -374,10 +386,7 @@ export default function Home() {
       <section className="section reviews-section">
         <div className="section-heading reviews-heading reveal">
           <p className="eyebrow">Opinie i zaufanie</p>
-          <h2>{keepShortWords("Rodzice i pacjenci doceniają spokojne tłumaczenie, dokładność i jasny plan po wizycie")}</h2>
-          <p className="section-lead">
-            {keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz. Poniżej pokazuję dwadzieścia kafli z krótkimi streszczeniami opinii pacjentów.")}
-          </p>
+          <h2>{keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz")}</h2>
         </div>
         <div className="reviews-marquee" aria-label="Przesuwane opinie pacjentów">
           <div className="reviews-track">
