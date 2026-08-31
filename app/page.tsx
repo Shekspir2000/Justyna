@@ -44,6 +44,7 @@ const trustItems = [
 
 const offerGroups = [
   {
+    slug: "fizjoterapia-niemowlat",
     title: "Fizjoterapia niemowląt",
     text: "Wspieram prawidłowy rozwój ruchowy niemowląt, pomagając w trudnościach pojawiających się na różnych etapach rozwoju. Terapia jest zawsze dobierana indywidualnie do potrzeb dziecka i jego aktualnych możliwości.",
     image: "/images/offer-infants-therapy.jpg",
@@ -60,6 +61,7 @@ const offerGroups = [
     ],
   },
   {
+    slug: "fizjoterapia-dzieci",
     title: "Fizjoterapia dzieci",
     text: "Pomagam dzieciom w kształtowaniu prawidłowej postawy ciała i pracy stóp, wspierając ich harmonijny rozwój oraz zapobiegając pogłębianiu się nieprawidłowości. Terapia obejmuje zarówno ćwiczenia, jak i naukę zaleceń do domu.",
     image: "/images/offer-children-therapy.png",
@@ -73,6 +75,7 @@ const offerGroups = [
     ],
   },
   {
+    slug: "fizjoterapia-stomatologiczna",
     title: "FIZJOTERAPIA STOMATOLOGICZNA",
     text: "Pomagam w terapii dolegliwości związanych z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
     image: "/images/offer-dental-therapy.jpg",
@@ -86,6 +89,7 @@ const offerGroups = [
     ],
   },
   {
+    slug: "szkolenia-dla-gabinetow-logopedycznych",
     title: "SZKOLENIA DLA GABINETÓW LOGOPEDYCZNYCH",
     text: "Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci i niemowląt. Pokazuję, kiedy warto włączyć fizjoterapię i jak planować wspólne działania terapeutyczne.",
     image: "/images/offer-logopedics-training.jpg",
@@ -347,13 +351,9 @@ export default function Home() {
               <div className="offer-path-copy">
                 <h3>{keepShortWords(item.title)}</h3>
                 <p>{keepShortWords(item.text)}</p>
-                {item.items.length > 0 ? (
-                  <ul>
-                    {item.items.map((point) => (
-                      <li key={point}>{keepShortWords(point)}</li>
-                    ))}
-                  </ul>
-                ) : null}
+                <Link className="offer-path-link" href={`/uslugi/${item.slug}`}>
+                  Czytaj więcej →
+                </Link>
               </div>
             </article>
           ))}
