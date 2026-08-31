@@ -11,7 +11,6 @@ const navItems: Array<[label: string, href: string | null]> = [
   ["O mnie", "#o-mnie"],
   ["Oferta", "#oferta"],
   ["Umów się", bookingUrl],
-  ["Współpraca", "#wspolpraca"],
   ["Sklep", "#sklep"],
   ["Kontakt", "#kontakt"],
 ];
@@ -30,14 +29,14 @@ const marqueeItems = [
 const trustItems = [
   {
     title: "10+ lat doświadczenia",
-    text: "w pracy jako fizjoterapeuta.",
+    text: "w pracy jako fizjoterapeuta",
   },
   {
     title: "200+ zadowolonych pacjentów",
     text: "objętych indywidualną fizjoterapią i diagnostyką",
   },
   {
-    title: "Certyfikowana terapeutka MT I NOMPT PL",
+    title: "Certyfikowana terapeutka\nMT I\nNOMPT PL",
     text: "kursu wg standardów IFOMPT",
   },
 ];
@@ -45,7 +44,7 @@ const trustItems = [
 const offerGroups = [
   {
     slug: "fizjoterapia-niemowlat",
-    title: "Fizjoterapia niemowląt",
+    title: "FIZJOTERAPIA NIEMOWLĄT",
     text: "Wspieram prawidłowy rozwój ruchowy niemowląt, pomagając w trudnościach pojawiających się na różnych etapach rozwoju. Terapia jest zawsze dobierana indywidualnie do potrzeb dziecka i jego aktualnych możliwości.",
     image: "/images/offer-infants-therapy.jpg",
     alt: "Fizjoterapia niemowląt w gabinecie",
@@ -62,7 +61,7 @@ const offerGroups = [
   },
   {
     slug: "fizjoterapia-dzieci",
-    title: "Fizjoterapia dzieci",
+    title: "FIZJOTERAPIA DZIECI",
     text: "Pomagam dzieciom w kształtowaniu prawidłowej postawy ciała i pracy stóp, wspierając ich harmonijny rozwój oraz zapobiegając pogłębianiu się nieprawidłowości. Terapia obejmuje zarówno ćwiczenia, jak i naukę zaleceń do domu.",
     image: "/images/offer-children-therapy.png",
     alt: "Fizjoterapia dzieci i praca z rozwojem ruchowym",
@@ -116,25 +115,6 @@ const processSteps = [
     title: "Plan i zalecenia do domu",
     text: "Rodzic lub pacjent wychodzi z gabinetu z jasnym planem: co obserwować, co ćwiczyć, czego unikać i kiedy warto wrócić na kontrolę lub włączyć innego specjalistę.",
     note: "konkretne kolejne kroki",
-  },
-];
-
-const cooperationTopics = [
-  {
-    title: "Kiedy włączyć fizjoterapeutę",
-    text: "Wskazówki, przy których objawach i trudnościach dziecka warto poszerzyć terapię logopedyczną o ocenę fizjoterapeutyczną.",
-  },
-  {
-    title: "Napięcia twarzy, szyi i tułowia",
-    text: "Praktyczne spojrzenie na to, jak napięcie w ciele może wpływać na karmienie, funkcję jamy ustnej i przebieg terapii.",
-  },
-  {
-    title: "Wędzidełko i przygotowanie do zabiegu",
-    text: "Omówienie pracy przed podcięciem wędzidełka oraz po zabiegu, z uwzględnieniem zaleceń dla rodzica.",
-  },
-  {
-    title: "Spójny plan dla rodzica",
-    text: "Ułożenie prostego języka komunikacji i wspólnych zaleceń, aby rodzic wiedział, co robić między wizytami.",
   },
 ];
 
@@ -243,7 +223,7 @@ export default function Home() {
       <section className="hero hero-background" id="top">
         <div className="hero-copy">
           <p className="eyebrow">{keepShortWords("Fizjoterapia niemowląt, dzieci i stawów skroniowo-żuchwowych")}</p>
-          <h1>{keepShortWords("Pomagam znaleźć przyczynę Twoich dolegliwości.")}</h1>
+          <h1>{keepShortWords("Pomagam znaleźć przyczynę Twoich dolegliwości")}</h1>
           <p className="lead">
             {keepShortWords("Łącząc fizjoterapię pediatryczną i stomatologiczną, terapię manualną oraz współpracę z logopedą szukam zależności, które mogą stać za napięciem, asymetrią, problemami z postawą, funkcją jamy ustnej czy bruksizmem. Patrzę na pacjenta całościowo, żeby zrozumieć nie tylko ")}
             <em>co</em>
@@ -363,10 +343,7 @@ export default function Home() {
       <section className="method-section" id="metoda">
         <div className="section method-inner">
           <div className="section-heading method-heading reveal">
-            <p className="eyebrow">Jak wygląda wizyta</p>
-            <p className="section-lead">
-              {keepShortWords("Każda wizyta ma spokojny, czytelny rytm: od rozmowy i badania, przez terapię, po zalecenia, które rodzic lub pacjent naprawdę rozumie.")}
-            </p>
+            <h2>Jak wygląda wizyta</h2>
           </div>
 
           <div className="process-grid">
@@ -384,10 +361,9 @@ export default function Home() {
       </section>
 
       <section className="section reviews-section">
-        <div className="section-heading reviews-heading reveal">
-          <p className="eyebrow">Opinie i zaufanie</p>
-          <h2>{keepShortWords("Wybrane opinie pochodzą z profilu Justyny na ZnanyLekarz")}</h2>
-        </div>
+        <a className="reviews-source reveal" href={`${bookingUrl}#profile-reviews`}>
+          Zobacz opinie na ZnanyLekarz
+        </a>
         <div className="reviews-marquee" aria-label="Przesuwane opinie pacjentów">
           <div className="reviews-track">
             {[0, 1].map((group) => (
@@ -406,9 +382,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <a className="reviews-source reveal" href={`${bookingUrl}#profile-reviews`}>
-          Zobacz opinie na ZnanyLekarz
-        </a>
       </section>
 
       <section className="booking-section" id="umow-sie">
@@ -418,61 +391,6 @@ export default function Home() {
           <a className="primary-button" href={bookingUrl}>
             Umów się na wizytę
           </a>
-        </div>
-      </section>
-
-      <section className="section cooperation-section" id="wspolpraca">
-        <div className="cooperation-heading reveal">
-          <p className="eyebrow">Współpraca</p>
-          <h2>{keepShortWords("Wsparcie dla logopedów i gabinetów logopedycznych")}</h2>
-          <p className="section-lead">
-            {keepShortWords("Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci. Pokazuję, kiedy warto włączyć fizjoterapię, jak czytać napięcia i jak planować wspólne działania.")}
-          </p>
-          <a className="secondary-button" href="#kontakt">
-            Zapytaj o współpracę
-          </a>
-        </div>
-        <div className="cooperation-content">
-          <div className="cooperation-photos reveal" aria-label="Zdjęcia ze szkolenia i pracy manualnej">
-            <Image
-              className="cooperation-photo-main"
-              src="/images/cooperation-training-6978.jpg"
-              alt="Justyna Jasińska podczas szkolenia z pracy manualnej w obrębie twarzy i żuchwy"
-              width={1050}
-              height={1400}
-              unoptimized
-              sizes="(min-width: 820px) 34vw, 100vw"
-            />
-            <Image
-              className="cooperation-photo-side"
-              src="/images/cooperation-training-6958.jpg"
-              alt="Obserwacja technik manualnych podczas szkolenia dla specjalistów"
-              width={1050}
-              height={1400}
-              unoptimized
-              sizes="(min-width: 820px) 22vw, 50vw"
-            />
-          </div>
-          <div className="cooperation-topics">
-            {cooperationTopics.map((topic) => (
-              <article className="cooperation-topic reveal" key={topic.title}>
-                <h3>{keepShortWords(topic.title)}</h3>
-                <p>{keepShortWords(topic.text)}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-section" id="sklep" aria-label="Sklep i materiały edukacyjne">
-        <div className="shop-inner reveal">
-          <div className="shop-copy">
-            <p className="eyebrow">Sklep</p>
-            <h2>{keepShortWords("Wkrótce materiały edukacyjne dla rodziców")}</h2>
-            <p>
-              {keepShortWords("Pracuję nad e-bookami, webinarami i prostymi materiałami, które pomogą rodzicom spokojniej rozumieć rozwój dziecka, napięcia, karmienie oraz codzienną pracę zaleconą po wizycie.")}
-            </p>
-          </div>
         </div>
       </section>
 
@@ -497,6 +415,15 @@ export default function Home() {
             <span>Instagram</span>
             <strong>fizjoterapia_z_glowa</strong>
           </a>
+        </div>
+      </section>
+
+      <section className="shop-section" id="sklep" aria-label="Sklep i materiały edukacyjne">
+        <div className="shop-inner reveal">
+          <div className="shop-copy">
+            <p className="eyebrow">Sklep</p>
+            <h2>{keepShortWords("Wkrótce materiały edukacyjne dla pacjentów")}</h2>
+          </div>
         </div>
       </section>
 
