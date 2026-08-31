@@ -76,13 +76,18 @@ const services = [
 const findService = (slug: string) =>
   services.find((service) => service.slug === slug);
 
+type ServicePageProps = {
+  params: Promise<{ slug: string }>;
+};
+
 export const dynamicParams = false;
 
 export const generateStaticParams = () =>
   services.map((service) => ({ slug: service.slug }));
 
-export const generateMetadata = ({ params }: { params: { slug: string } }): Metadata => {
-  const service = findService(params.slug);
+export const generateMetadata = async ({ params }: ServicePageProps): Promise<Metadata> => {
+  const { slug } = await params;
+  const service = findService(slug);
 
   if (!service) {
     return {
@@ -96,8 +101,9 @@ export const generateMetadata = ({ params }: { params: { slug: string } }): Meta
   };
 };
 
-export default function ServicePage({ params }: { params: { slug: string } }) {
-  const service = findService(params.slug);
+export default async function ServicePage({ params }: ServicePageProps) {
+  const { slug } = await params;
+  const service = findService(slug);
 
   if (!service) {
     notFound();
