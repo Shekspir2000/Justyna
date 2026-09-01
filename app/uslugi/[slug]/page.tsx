@@ -76,6 +76,27 @@ const services = [
 const findService = (slug: string) =>
   services.find((service) => service.slug === slug);
 
+const visitSteps = [
+  {
+    number: "01",
+    title: "Wywiad i diagnostyka",
+    text: "Zaczynam od rozmowy, obserwacji i badania manualnego. Szukam zależności między objawem, napięciem, ruchem, karmieniem, postawą lub pracą stawu skroniowo-żuchwowego.",
+    note: "najpierw zrozumienie problemu",
+  },
+  {
+    number: "02",
+    title: "Terapia dobrana do przyczyny",
+    text: "Dobieram techniki manualne, pracę z tkankami i edukację do konkretnej osoby. Tłumaczę prostym językiem, co robimy i dlaczego właśnie ten element ma znaczenie.",
+    note: "terapia bez przypadkowych działań",
+  },
+  {
+    number: "03",
+    title: "Plan i zalecenia do domu",
+    text: "Rodzic lub pacjent wychodzi z gabinetu z jasnym planem: co obserwować, co ćwiczyć, czego unikać i kiedy warto wrócić na kontrolę lub włączyć innego specjalistę.",
+    note: "konkretne kolejne kroki",
+  },
+];
+
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -163,6 +184,26 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <p>{keepShortWords(service.intro)}</p>
           </div>
         )}
+      </section>
+
+      <section className="method-section service-method">
+        <div className="section method-inner">
+          <div className="section-heading method-heading">
+            <h2>Jak wygląda wizyta</h2>
+          </div>
+
+          <div className="process-grid">
+            {visitSteps.map((step) => (
+              <article className="process-card" key={step.number}>
+                <span className="process-number">{step.number}</span>
+                <span className="process-icon" aria-hidden="true">{step.number === "01" ? "?" : step.number === "02" ? "+" : ">"}</span>
+                <h3>{keepShortWords(step.title)}</h3>
+                <p>{keepShortWords(step.text)}</p>
+                <small>{keepShortWords(step.note)}</small>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="service-cta">

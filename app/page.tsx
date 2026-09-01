@@ -97,27 +97,6 @@ const offerGroups = [
   },
 ];
 
-const processSteps = [
-  {
-    number: "01",
-    title: "Wywiad i diagnostyka",
-    text: "Zaczynam od rozmowy, obserwacji i badania manualnego. Szukam zależności między objawem, napięciem, ruchem, karmieniem, postawą lub pracą stawu skroniowo-żuchwowego.",
-    note: "najpierw zrozumienie problemu",
-  },
-  {
-    number: "02",
-    title: "Terapia dobrana do przyczyny",
-    text: "Dobieram techniki manualne, pracę z tkankami i edukację do konkretnej osoby. Tłumaczę prostym językiem, co robimy i dlaczego właśnie ten element ma znaczenie.",
-    note: "terapia bez przypadkowych działań",
-  },
-  {
-    number: "03",
-    title: "Plan i zalecenia do domu",
-    text: "Rodzic lub pacjent wychodzi z gabinetu z jasnym planem: co obserwować, co ćwiczyć, czego unikać i kiedy warto wrócić na kontrolę lub włączyć innego specjalistę.",
-    note: "konkretne kolejne kroki",
-  },
-];
-
 const reviews = [
   {
     author: "Karolina P.",
@@ -246,25 +225,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="marquee-band" aria-label="Najważniejsze obszary pracy">
-        <div className="marquee-track">
-          <div className="marquee-group">
-            {marqueeItems.map((item) => (
-              <span className="marquee-item" key={item}>
-                {keepShortWords(item)}
-              </span>
-            ))}
-          </div>
-          <div className="marquee-group" aria-hidden="true">
-            {marqueeItems.map((item) => (
-              <span className="marquee-item" key={`repeat-${item}`}>
-                {keepShortWords(item)}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section about-section" id="o-mnie">
         <div className="about-grid">
           <div className="about-photo reveal">
@@ -299,6 +259,25 @@ export default function Home() {
               <span>Kursy i szkolenia</span>
               <strong>{keepShortWords("Zobacz mój rozwój zawodowy")}</strong>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="marquee-band" aria-label="Najważniejsze obszary pracy">
+        <div className="marquee-track">
+          <div className="marquee-group">
+            {marqueeItems.map((item) => (
+              <span className="marquee-item" key={item}>
+                {keepShortWords(item)}
+              </span>
+            ))}
+          </div>
+          <div className="marquee-group" aria-hidden="true">
+            {marqueeItems.map((item) => (
+              <span className="marquee-item" key={`repeat-${item}`}>
+                {keepShortWords(item)}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -340,23 +319,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="method-section" id="metoda">
-        <div className="section method-inner">
-          <div className="section-heading method-heading reveal">
-            <h2>Jak wygląda wizyta</h2>
-          </div>
-
-          <div className="process-grid">
-            {processSteps.map((step) => (
-              <article className="process-card reveal" key={step.number}>
-                <span className="process-number">{step.number}</span>
-                <span className="process-icon" aria-hidden="true">{step.number === "01" ? "?" : step.number === "02" ? "+" : ">"}</span>
-                <h3>{keepShortWords(step.title)}</h3>
-                <p>{keepShortWords(step.text)}</p>
-                <small>{keepShortWords(step.note)}</small>
-              </article>
-            ))}
-          </div>
+      <section className="booking-section" id="umow-sie">
+        <div className="booking-inner reveal">
+          <p className="eyebrow">Rezerwacja</p>
+          <h2>{keepShortWords("Umów wizytę przez ZnanyLekarz")}</h2>
+          <a className="primary-button" href={bookingUrl}>
+            Umów się na wizytę
+          </a>
         </div>
       </section>
 
@@ -384,13 +353,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="booking-section" id="umow-sie">
-        <div className="booking-inner reveal">
-          <p className="eyebrow">Rezerwacja</p>
-          <h2>{keepShortWords("Umów wizytę przez ZnanyLekarz")}</h2>
-          <a className="primary-button" href={bookingUrl}>
-            Umów się na wizytę
-          </a>
+      <section className="shop-section" id="sklep" aria-label="Sklep i materiały edukacyjne">
+        <div className="shop-inner reveal">
+          <div className="shop-copy">
+            <p className="eyebrow">Sklep</p>
+            <h2>{keepShortWords("Wkrótce materiały edukacyjne dla pacjentów")}</h2>
+          </div>
         </div>
       </section>
 
@@ -415,15 +383,6 @@ export default function Home() {
             <span>Instagram</span>
             <strong>fizjoterapia_z_glowa</strong>
           </a>
-        </div>
-      </section>
-
-      <section className="shop-section" id="sklep" aria-label="Sklep i materiały edukacyjne">
-        <div className="shop-inner reveal">
-          <div className="shop-copy">
-            <p className="eyebrow">Sklep</p>
-            <h2>{keepShortWords("Wkrótce materiały edukacyjne dla pacjentów")}</h2>
-          </div>
         </div>
       </section>
 
