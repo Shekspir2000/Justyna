@@ -1400,7 +1400,7 @@ h3 {
   display: flex;
   width: max-content;
   min-width: max-content;
-  animation: reviews-scroll 306s linear infinite;
+  animation: reviews-scroll 440s linear infinite;
   will-change: transform;
 }
 
@@ -1412,6 +1412,7 @@ h3 {
   display: flex;
   flex: 0 0 auto;
   gap: 16px;
+  width: max-content;
   min-width: max-content;
   padding-right: 16px;
 }
@@ -1475,11 +1476,11 @@ h3 {
 
 @keyframes reviews-scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
