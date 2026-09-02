@@ -1200,17 +1200,20 @@ h3 {
   box-shadow: none;
 }
 
+.offer-path:nth-child(1) img {
+  object-position: 56% 44%;
+}
+
 .offer-path:nth-child(2) img {
-  object-position: center 42%;
+  object-position: 45% 46%;
 }
 
 .offer-path:nth-child(3) img {
-  object-position: 28% center;
+  object-position: 36% 42%;
 }
 
 .offer-path:nth-child(4) img {
-  object-fit: contain;
-  object-position: center;
+  object-position: 62% 48%;
 }
 
 .offer-card:first-child {
@@ -1845,6 +1848,22 @@ h3 {
   height: clamp(280px, 42vw, 520px);
   object-fit: cover;
   object-position: center;
+}
+
+.service-hero-image-fizjoterapia-niemowlat img {
+  object-position: 56% 44%;
+}
+
+.service-hero-image-fizjoterapia-dzieci img {
+  object-position: 45% 46%;
+}
+
+.service-hero-image-fizjoterapia-stomatologiczna img {
+  object-position: 36% 42%;
+}
+
+.service-hero-image-szkolenia-dla-gabinetow-logopedycznych img {
+  object-position: 62% 48%;
 }
 
 .service-hero-copy {
