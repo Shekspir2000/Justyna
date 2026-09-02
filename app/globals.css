@@ -271,8 +271,8 @@ main {
   position: relative;
   isolation: isolate;
   --hero-bg-x: 66%;
-  --hero-bg-y: 50%;
-  --hero-bg-y-scroll: 47%;
+  --hero-bg-y: 18%;
+  --hero-bg-y-scroll: 14%;
   display: flex;
   align-items: flex-start;
   width: 100%;
@@ -295,7 +295,7 @@ main {
 .hero-background::before {
   inset: 0;
   z-index: 0;
-  background: url("/images/justyna-hero-2.png") var(--hero-bg-x) var(--hero-bg-y) / cover no-repeat;
+  background: url("/images/justyna-hero-3.png") var(--hero-bg-x) var(--hero-bg-y) / cover no-repeat;
   transform: none;
   transform-origin: center center;
 }
@@ -758,7 +758,7 @@ h3 {
   aspect-ratio: 4 / 5;
   display: block;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center top;
 }
 
 .about-copy {
@@ -2081,7 +2081,7 @@ h3 {
     position: absolute;
     inset: 0;
     aspect-ratio: auto;
-    object-position: center 12%;
+    object-position: center top;
   }
 
   .contact-section {
@@ -2156,15 +2156,15 @@ h3 {
 
 @media (min-aspect-ratio: 2/1) and (min-width: 1600px) {
   .hero-background {
-    --hero-bg-y: 34%;
-    --hero-bg-y-scroll: 32%;
+    --hero-bg-y: 0%;
+    --hero-bg-y-scroll: 0%;
   }
 }
 
 @media (min-aspect-ratio: 21/9) and (min-width: 1900px) {
   .hero-background {
-    --hero-bg-y: 20%;
-    --hero-bg-y-scroll: 20%;
+    --hero-bg-y: 0%;
+    --hero-bg-y-scroll: 0%;
   }
 }
 
@@ -2196,7 +2196,7 @@ h3 {
   }
 
   .hero-background::before {
-    background: url("/images/justyna-hero-2.png") 63% center / cover no-repeat;
+    background: url("/images/justyna-hero-3.png") 68% center / cover no-repeat;
     animation: none;
   }
 
@@ -2409,7 +2409,7 @@ h3 {
   }
 
   .hero-background::before {
-    background-position: 64% center;
+    background-position: 68% center;
   }
 
   .hero-media,

@@ -225,11 +225,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="marquee-band" aria-label="Najważniejsze obszary pracy">
+        <div className="marquee-track">
+          <div className="marquee-group">
+            {marqueeItems.map((item) => (
+              <span className="marquee-item" key={item}>
+                {keepShortWords(item)}
+              </span>
+            ))}
+          </div>
+          <div className="marquee-group" aria-hidden="true">
+            {marqueeItems.map((item) => (
+              <span className="marquee-item" key={`repeat-${item}`}>
+                {keepShortWords(item)}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section about-section" id="o-mnie">
         <div className="about-grid">
           <div className="about-photo reveal">
             <Image
-              src="/images/about-justyna-o-mnie.png"
+              src="/images/about-justyna-new.png"
               alt="Justyna Jasińska w jasnym gabinecie fizjoterapii pediatrycznej"
               width={1023}
               height={1537}
@@ -259,25 +278,6 @@ export default function Home() {
               <span>Kursy i szkolenia</span>
               <strong>{keepShortWords("Zobacz mój rozwój zawodowy")}</strong>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="marquee-band" aria-label="Najważniejsze obszary pracy">
-        <div className="marquee-track">
-          <div className="marquee-group">
-            {marqueeItems.map((item) => (
-              <span className="marquee-item" key={item}>
-                {keepShortWords(item)}
-              </span>
-            ))}
-          </div>
-          <div className="marquee-group" aria-hidden="true">
-            {marqueeItems.map((item) => (
-              <span className="marquee-item" key={`repeat-${item}`}>
-                {keepShortWords(item)}
-              </span>
-            ))}
           </div>
         </div>
       </section>
