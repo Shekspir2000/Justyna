@@ -15,7 +15,7 @@ const services = [
     title: "Fizjoterapia niemowląt",
     intro:
       "Wspieram prawidłowy rozwój ruchowy niemowląt, pomagając w trudnościach pojawiających się na różnych etapach rozwoju. Terapia jest zawsze dobierana indywidualnie do potrzeb dziecka i jego aktualnych możliwości.",
-    image: "/images/offer-infants-new.png",
+    image: "/images/offer-mix-infants.png",
     alt: "Fizjoterapia niemowląt w gabinecie",
     listTitle: "W jakich problemach może pomóc terapia?",
     items: [
@@ -34,7 +34,7 @@ const services = [
     title: "Fizjoterapia dzieci",
     intro:
       "Pomagam dzieciom w kształtowaniu prawidłowej postawy ciała i pracy stóp, wspierając ich harmonijny rozwój oraz zapobiegając pogłębianiu się nieprawidłowości. Terapia obejmuje zarówno ćwiczenia, jak i naukę zaleceń do domu.",
-    image: "/images/offer-children-new.png",
+    image: "/images/offer-mix-children.png",
     alt: "Fizjoterapia dzieci i praca z rozwojem ruchowym",
     listTitle: "W jakich problemach może pomóc terapia?",
     items: [
@@ -50,7 +50,7 @@ const services = [
     title: "FIZJOTERAPIA STOMATOLOGICZNA",
     intro:
       "Pomagam w terapii dolegliwości związanych z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
-    image: "/images/offer-dental-new.png",
+    image: "/images/offer-mix-dental.png",
     alt: "Fizjoterapia stomatologiczna i praca ze stawem skroniowo-żuchwowym",
     listTitle: "W jakich problemach może pomóc terapia?",
     items: [
@@ -66,7 +66,7 @@ const services = [
     title: "SZKOLENIA DLA GABINETÓW LOGOPEDYCZNYCH",
     intro:
       "Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci i niemowląt. Pokazuję, kiedy warto włączyć fizjoterapię i jak planować wspólne działania terapeutyczne.",
-    image: "/images/offer-logopedics-new.png",
+    image: "/images/offer-mix-logopedics.png",
     alt: "Szkolenie dla gabinetów logopedycznych z pracy fizjoterapeutycznej",
     listTitle: "",
     items: [],
