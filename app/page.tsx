@@ -201,7 +201,7 @@ export default function Home() {
 
       <section className="hero hero-background" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">{keepShortWords("Fizjoterapia niemowląt, dzieci i stawów skroniowo-żuchwowych")}</p>
+          <p className="eyebrow">{keepShortWords("Fizjoterapia dziecięca i stomatologiczna")}</p>
           <h1>{keepShortWords("Pomagam znaleźć przyczynę Twoich dolegliwości")}</h1>
           <p className="lead">
             {keepShortWords("Łącząc fizjoterapię pediatryczną i stomatologiczną, terapię manualną oraz współpracę z logopedą szukam zależności, które mogą stać za napięciem, asymetrią, problemami z postawą, funkcją jamy ustnej czy bruksizmem. Patrzę na pacjenta całościowo, żeby zrozumieć nie tylko ")}
