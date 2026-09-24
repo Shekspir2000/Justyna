@@ -564,6 +564,7 @@ h3 {
 
 .trust-strip li {
   display: grid;
+  align-content: start;
   gap: 4px;
   max-width: 640px;
   color: var(--ink);
@@ -731,14 +732,18 @@ h3 {
 }
 
 .about-editorial-intro blockquote {
-  max-width: 760px;
+  max-width: none;
   margin: 0;
   color: var(--ink);
   font-family: inherit;
-  font-size: clamp(1.55rem, 2.65vw, 2.42rem);
-  font-weight: 500;
-  line-height: 1.12;
+  font-size: clamp(1.32rem, 1.85vw, 1.78rem);
+  font-weight: 650;
+  line-height: 1.24;
   letter-spacing: 0;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .about-photo {
@@ -766,10 +771,10 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-self: stretch;
-  gap: clamp(18px, 2.5vw, 28px);
+  gap: clamp(16px, 2vw, 22px);
   color: rgba(65, 52, 77, 0.84);
-  font-size: clamp(0.94rem, 1.04vw, 1rem);
-  line-height: 1.62;
+  font-size: clamp(0.92rem, 0.98vw, 0.98rem);
+  line-height: 1.58;
 }
 
 .about-copy h2 {
@@ -782,11 +787,15 @@ h3 {
 
 .about-text {
   display: grid;
-  gap: clamp(12px, 1.4vw, 18px);
+  gap: clamp(10px, 1.2vw, 15px);
 }
 
 .about-text p {
   margin-bottom: 0;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .about-course-tile {
@@ -1201,11 +1210,11 @@ h3 {
 }
 
 .offer-path:nth-child(1) img {
-  object-position: 58% 48%;
+  object-position: 50% 50%;
 }
 
 .offer-path:nth-child(2) img {
-  object-position: 42% 50%;
+  object-position: 42% 32%;
 }
 
 .offer-path:nth-child(3) img {
@@ -1213,7 +1222,7 @@ h3 {
 }
 
 .offer-path:nth-child(4) img {
-  object-position: 64% 50%;
+  object-position: 50% 50%;
 }
 
 .offer-card:first-child {
@@ -1744,11 +1753,12 @@ h3 {
 }
 
 .course-hero h1 {
-  max-width: 960px;
+  width: 100%;
+  max-width: none;
   color: var(--ink);
-  font-size: clamp(2.1rem, 4.4vw, 4.8rem);
-  font-weight: 550;
-  line-height: 1.02;
+  font-size: clamp(1.3rem, 2.15vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.42;
 }
 
 .course-hero p:not(.eyebrow) {
@@ -2134,7 +2144,7 @@ h3 {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 820px) {
   .offer-paths {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2169,6 +2179,12 @@ h3 {
 }
 
 @media (max-width: 639px) {
+  .about-editorial-intro blockquote,
+  .about-text p {
+    text-align: left;
+    hyphens: none;
+  }
+
   .hero-preview .site-header {
     position: sticky;
     top: 0;

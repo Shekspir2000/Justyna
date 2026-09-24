@@ -36,7 +36,7 @@ const trustItems = [
     text: "objętych indywidualną fizjoterapią i diagnostyką",
   },
   {
-    title: "Certyfikowana terapeutka\nMT I\nNOMPT PL",
+    title: "Certyfikowana\nterapeutka\u00a0MT\u00a0I\nNOMPT PL",
     text: "kursu wg standardów IFOMPT",
   },
 ];
@@ -46,7 +46,7 @@ const offerGroups = [
     slug: "fizjoterapia-niemowlat",
     title: "FIZJOTERAPIA NIEMOWLĄT",
     text: "Wspieram prawidłowy rozwój ruchowy niemowląt, pomagając w trudnościach pojawiających się na różnych etapach rozwoju. Terapia jest zawsze dobierana indywidualnie do potrzeb dziecka i jego aktualnych możliwości.",
-    image: "/images/offer-mix-infants.png",
+    image: "/images/offer-infants-headroom.png",
     alt: "Fizjoterapia niemowląt w gabinecie",
     items: [
       "asymetria ułożeniowa i preferowanie jednej strony",
@@ -63,7 +63,7 @@ const offerGroups = [
     slug: "fizjoterapia-dzieci",
     title: "FIZJOTERAPIA DZIECI",
     text: "Pomagam dzieciom w kształtowaniu prawidłowej postawy ciała i pracy stóp, wspierając ich harmonijny rozwój oraz zapobiegając pogłębianiu się nieprawidłowości. Terapia obejmuje zarówno ćwiczenia, jak i naukę zaleceń do domu.",
-    image: "/images/offer-mix-children.png",
+    image: "/images/offer-children-back-exam.png",
     alt: "Fizjoterapia dzieci i praca z rozwojem ruchowym",
     items: [
       "wady i zaburzenia postawy ciała",
@@ -91,7 +91,7 @@ const offerGroups = [
     slug: "szkolenia-dla-gabinetow-logopedycznych",
     title: "SZKOLENIA DLA GABINETÓW LOGOPEDYCZNYCH",
     text: "Prowadzę wewnętrzne szkolenia dla gabinetów logopedycznych dotyczące współpracy fizjoterapeuty i logopedy w procesie terapeutycznym dzieci i niemowląt. Pokazuję, kiedy warto włączyć fizjoterapię i jak planować wspólne działania terapeutyczne.",
-    image: "/images/offer-mix-logopedics.png",
+    image: "/images/offer-logopedics-headroom.png",
     alt: "Szkolenie dla gabinetów logopedycznych z pracy fizjoterapeutycznej",
     items: [],
   },
@@ -201,10 +201,9 @@ export default function Home() {
 
       <section className="hero hero-background" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">{keepShortWords("Fizjoterapia dziecięca i stomatologiczna")}</p>
           <h1>{keepShortWords("Pomagam znaleźć przyczynę Twoich dolegliwości")}</h1>
           <p className="lead">
-            {keepShortWords("Łącząc fizjoterapię pediatryczną i stomatologiczną, terapię manualną oraz współpracę z logopedą szukam zależności, które mogą stać za napięciem, asymetrią, problemami z postawą, funkcją jamy ustnej czy bruksizmem. Patrzę na pacjenta całościowo, żeby zrozumieć nie tylko ")}
+            {keepShortWords("Łącząc fizjoterapię pediatryczną i stomatologiczną, terapię manualną oraz współpracę z logopedą szukam zależności, które mogą stać za napięciem, asymetrią i problemami z postawą. Patrzę na pacjenta całościowo, żeby zrozumieć nie tylko ")}
             <em>co</em>
             {keepShortWords(" się dzieje, ale przede wszystkim ")}
             <em>dlaczego</em>.
