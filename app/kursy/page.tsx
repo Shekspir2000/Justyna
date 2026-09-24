@@ -104,7 +104,7 @@ export default function CoursesPage() {
       <section className="course-hero">
         <p className="eyebrow">Kursy i szkolenia</p>
         <h1 className="course-hero-intro">
-          {keepShortWords("Poniżej znajduje się lista kursów, szkoleń i konferencji Justyny Jasińskiej z obszaru fizjoterapii pediatrycznej, stomatologicznej, terapii manualnej, diagnostyki obrazowej oraz pracy z dziećmi.")}
+          {keepShortWords("Poniżej przedstawiam listę moich kursów, szkoleń i konferencji z obszaru fizjoterapii pediatrycznej, stomatologicznej, terapii manualnej, diagnostyki obrazowej oraz pracy z dziećmi.")}
         </h1>
       </section>
 

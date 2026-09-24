@@ -41,7 +41,7 @@ test("server-renders the current homepage", async () => {
 
 test("server-renders courses and all service routes", async () => {
   const routes = [
-    ["/kursy", /Poniżej znajduje się lista kursów/],
+    ["/kursy", /Poniżej przedstawiam listę moich kursów/],
     ["/uslugi/fizjoterapia-niemowlat", /Fizjoterapia niemowląt/],
     ["/uslugi/fizjoterapia-dzieci", /Fizjoterapia dzieci/],
     ["/uslugi/fizjoterapia-stomatologiczna", /FIZJOTERAPIA STOMATOLOGICZNA/],
