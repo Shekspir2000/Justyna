@@ -76,11 +76,12 @@ const offerGroups = [
   {
     slug: "fizjoterapia-stomatologiczna",
     title: "FIZJOTERAPIA STOMATOLOGICZNA",
-    text: "Pomagam w terapii dolegliwości związanych z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
+    text: "W trakcie wizyty zajmujemy się dolegliwościami związanymi z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
     image: "/images/offer-mix-dental.png",
     alt: "Fizjoterapia stomatologiczna i praca ze stawem skroniowo-żuchwowym",
     items: [
-      "bruksizm i zaciskanie zębów",
+      "bruksizm i zaciskanie zębów (zgrzytanie zębami)",
+      "napięciowe bóle głowy",
       "bóle i napięcia w obrębie żuchwy, twarzy i szyi",
       "zaburzenia i ograniczenia ruchomości stawu skroniowo-żuchwowego",
       "napięcia mięśniowe w obrębie twarzy i jamy ustnej",
@@ -201,7 +202,7 @@ export default function Home() {
 
       <section className="hero hero-background" id="top">
         <div className="hero-copy">
-          <h1>{keepShortWords("Pomagam znaleźć przyczynę Twoich dolegliwości")}</h1>
+          <h1>{keepShortWords("Skuteczna terapia zaczyna się od znalezienia przyczyny problemu")}</h1>
           <p className="lead">
             {keepShortWords("Łącząc fizjoterapię pediatryczną i stomatologiczną, terapię manualną oraz współpracę z logopedą szukam zależności, które mogą stać za napięciem, asymetrią i problemami z postawą. Patrzę na pacjenta całościowo, żeby zrozumieć nie tylko ")}
             <em>co</em>
@@ -356,7 +357,15 @@ export default function Home() {
         <div className="shop-inner reveal">
           <div className="shop-copy">
             <p className="eyebrow">Sklep</p>
-            <h2>{keepShortWords("Wkrótce materiały edukacyjne dla pacjentów")}</h2>
+            <h2>{keepShortWords("Wkrótce materiały edukacyjne")}</h2>
+          </div>
+          <div className="shop-grid" aria-label="Kategorie sklepu">
+            <article className="shop-card">
+              <h3>Dla pacjenta</h3>
+            </article>
+            <article className="shop-card">
+              <h3>Dla specjalisty</h3>
+            </article>
           </div>
         </div>
       </section>

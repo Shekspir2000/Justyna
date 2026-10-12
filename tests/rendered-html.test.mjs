@@ -29,7 +29,10 @@ test("server-renders the current homepage", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Justyna Jasińska \| Fizjoterapia pediatryczna i stomatologiczna Kraków<\/title>/i);
-  assert.match(html, /Pomagam znaleźć przyczynę Twoich dolegliwości/);
+  assert.match(html, /Skuteczna terapia zaczyna się od znalezienia przyczyny problemu/);
+  assert.match(html, /Dla pacjenta/);
+  assert.match(html, /Dla specjalisty/);
+  assert.match(html, /W.trakcie wizyty zajmujemy się dolegliwościami/);
   assert.match(html, /id="o-mnie"/);
   assert.match(html, /id="oferta"/);
   assert.match(html, /id="kontakt"/);
@@ -52,6 +55,20 @@ test("server-renders courses and all service routes", async () => {
     const response = await render(pathname);
     assert.equal(response.status, 200, pathname);
     assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i, pathname);
-    assert.match(await response.text(), expectedText, pathname);
+    const html = await response.text();
+    assert.match(html, expectedText, pathname);
+
+    if (pathname === "/uslugi/fizjoterapia-stomatologiczna") {
+      assert.match(html, /bruksizm i.zaciskanie zębów \(zaciskanie i.zgrzytanie zębami\)/i);
+      assert.match(html, /napięciowe bóle głowy/i);
+    }
+
+    if (pathname === "/uslugi/szkolenia-dla-gabinetow-logopedycznych") {
+      assert.match(html, /W.celu poznania szczegółowej oferty szkolenia proszę o.kontakt mailowy/i);
+      assert.match(html, /mailto:j\.jasinska@gmail\.com/i);
+      assert.doesNotMatch(html, /Umów się na spotkanie/i);
+      assert.doesNotMatch(html, /Umów konsultację i/i);
+    }
+
   }
 });

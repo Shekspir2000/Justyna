@@ -49,12 +49,13 @@ const services = [
     slug: "fizjoterapia-stomatologiczna",
     title: "FIZJOTERAPIA STOMATOLOGICZNA",
     intro:
-      "Pomagam w terapii dolegliwości związanych z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
+      "W trakcie wizyty zajmujemy się dolegliwościami związanymi z napięciem i funkcjonowaniem mięśni twarzy, żuchwy oraz stawu skroniowo-żuchwowego. Współpracuję również z logopedą, wspierając terapię zaburzeń w obrębie aparatu żucia i funkcji orofacjalnych.",
     image: "/images/offer-mix-dental.png",
     alt: "Fizjoterapia stomatologiczna i praca ze stawem skroniowo-żuchwowym",
     listTitle: "W jakich problemach może pomóc terapia?",
     items: [
-      "bruksizm i zaciskanie zębów",
+      "bruksizm i zaciskanie zębów (zaciskanie i zgrzytanie zębami)",
+      "napięciowe bóle głowy",
       "bóle i napięcia w obrębie żuchwy, twarzy i szyi",
       "zaburzenia i ograniczenia ruchomości stawu skroniowo-żuchwowego",
       "napięcia mięśniowe w obrębie twarzy i jamy ustnej",
@@ -130,6 +131,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
+  const isTraining = service.slug === "szkolenia-dla-gabinetow-logopedycznych";
+
   return (
     <main className="service-page">
       <header className="course-page-header">
@@ -162,9 +165,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <p className="eyebrow">Oferta</p>
           <h1>{keepShortWords(service.title)}</h1>
           <p>{keepShortWords(service.intro)}</p>
-          <a className="primary-button" href={bookingUrl}>
-            Umów się na spotkanie
-          </a>
+          {!isTraining ? (
+            <a className="primary-button" href={bookingUrl}>
+              Umów się na spotkanie
+            </a>
+          ) : null}
         </div>
       </section>
 
@@ -179,9 +184,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </ul>
           </div>
         ) : (
-          <div className="service-detail-card">
-            <h2>{keepShortWords(service.title)}</h2>
-            <p>{keepShortWords(service.intro)}</p>
+          <div className="service-detail-card service-detail-contact training-contact-card">
+            <p>{keepShortWords("W celu poznania szczegółowej oferty szkolenia proszę o kontakt mailowy")}</p>
+            <a href="mailto:j.jasinska@gmail.com">j.jasinska@gmail.com</a>
           </div>
         )}
       </section>
@@ -206,18 +211,20 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
-      <section className="service-cta">
-        <p className="eyebrow">Konsultacja</p>
-        <h2>{keepShortWords("Umów konsultację i sprawdź, jaki kierunek terapii będzie najlepszy")}</h2>
-        <div className="service-cta-actions">
-          <a className="primary-button" href={bookingUrl}>
-            Umów się na spotkanie
-          </a>
-          <Link className="secondary-button" href="/#oferta">
-            Wróć do oferty
-          </Link>
-        </div>
-      </section>
+      {!isTraining ? (
+        <section className="service-cta">
+          <p className="eyebrow">Konsultacja</p>
+          <h2>{keepShortWords("Umów konsultację i sprawdź, jaki kierunek terapii będzie najlepszy")}</h2>
+          <div className="service-cta-actions">
+            <a className="primary-button" href={bookingUrl}>
+              Umów się na spotkanie
+            </a>
+            <Link className="secondary-button" href="/#oferta">
+              Wróć do oferty
+            </Link>
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }
