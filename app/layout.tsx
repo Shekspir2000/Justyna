@@ -6,7 +6,7 @@ const description =
   "Fizjoterapia dzieci i niemowląt w Krakowie, fizjoterapia stomatologiczna, TMJ, bruksizm, terapia manualna IFOMPT i współpraca z logopedą.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://justynajasinskafizjo.pl"),
+  metadataBase: new URL("https://justynajasinska-fizjo.pl"),
   title,
   description,
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     locale: "pl_PL",
-    url: "https://justynajasinskafizjo.pl",
+    url: "https://justynajasinska-fizjo.pl",
     siteName: "Justyna Jasińska Fizjoterapia",
     images: [
       {
