@@ -1513,7 +1513,7 @@ h3 {
 
 .shop-section {
   padding: calc(var(--section-space) * 0.5) var(--gutter);
-  background: #412143;
+  background: var(--terracotta);
   color: #fffaf8;
 }
 
@@ -1560,7 +1560,7 @@ h3 {
 
 .shop-copy .eyebrow {
   margin-bottom: 0;
-  color: #fffaf8;
+  color: #412143;
   font-size: clamp(1.14rem, 1.45vw, 1.33rem);
   text-transform: none;
 }
