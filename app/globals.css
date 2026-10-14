@@ -7,6 +7,8 @@
   --blue: #412143;
   --clay: #c27b73;
   --gold: #fea84e;
+  --lemon: #f7ee96;
+  --terracotta: #bf5e40;
   --berry: #72465a;
   --blush: #e1cac4;
   --ink: #1e1552;
@@ -218,9 +220,9 @@ main {
 
 .header-cta,
 .primary-button {
-  background: #ffbe3f;
+  background: var(--lemon);
   color: var(--ink);
-  box-shadow: 0 14px 30px rgba(255, 190, 63, 0.25);
+  box-shadow: 0 14px 30px rgba(65, 33, 67, 0.16);
 }
 
 .header-cta {
@@ -249,7 +251,7 @@ main {
 .primary-button:hover,
 .header-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 18px 38px rgba(255, 190, 63, 0.33);
+  box-shadow: 0 18px 38px rgba(65, 33, 67, 0.22);
 }
 
 .secondary-button:hover {
@@ -630,9 +632,9 @@ h3 {
   position: relative;
   overflow: hidden;
   min-height: clamp(36px, 3.05vw, 48px);
-  border-block: 1px solid rgba(255, 250, 248, 0.08);
-  background: #815488;
-  color: rgba(255, 250, 248, 0.64);
+  border-block: 1px solid rgba(65, 33, 67, 0.14);
+  background: var(--lemon);
+  color: #412143;
   font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -656,7 +658,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: clamp(28px, 4vw, 58px);
-  color: rgba(255, 250, 248, 0.66);
+  color: #412143;
   font-size: clamp(0.72rem, 1vw, 0.92rem);
   font-weight: 850;
   line-height: 1;
@@ -670,7 +672,7 @@ h3 {
   height: 8px;
   flex: 0 0 auto;
   border-radius: 999px;
-  background: var(--gold);
+  background: #412143;
 }
 
 @keyframes marquee-scroll {
@@ -749,8 +751,9 @@ h3 {
 .about-photo {
   display: flex;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   min-width: 0;
+  margin-inline: auto;
   aspect-ratio: 4 / 5;
   border-radius: 10px;
   box-shadow: var(--shadow);
@@ -1232,8 +1235,8 @@ h3 {
 
 .booking-section {
   padding: calc(var(--section-space) * 0.18) var(--gutter);
-  background: #412143;
-  color: #fffaf8;
+  background: var(--lemon);
+  color: #412143;
 }
 
 .booking-inner {
@@ -1252,7 +1255,7 @@ h3 {
 
 .booking-inner h2 {
   max-width: min(980px, 100%);
-  color: #fffaf8;
+  color: #412143;
   margin-bottom: clamp(30px, 3vw, 42px);
   font-size: clamp(1.55rem, 2.65vw, 2.42rem);
   line-height: 1.12;
@@ -1262,14 +1265,25 @@ h3 {
 .booking-inner p {
   max-width: 620px;
   margin: 0 0 18px;
-  color: rgba(255, 250, 248, 0.84);
+  color: rgba(65, 33, 67, 0.84);
   font-size: 1.1rem;
 }
 
 .booking-inner small {
   display: block;
   margin-top: 16px;
-  color: rgba(255, 250, 248, 0.7);
+  color: rgba(65, 33, 67, 0.72);
+}
+
+.booking-inner .eyebrow {
+  color: #412143;
+}
+
+.booking-inner .primary-button,
+.booking-inner .primary-button:hover {
+  background: #412143;
+  color: var(--lemon);
+  box-shadow: 0 14px 30px rgba(65, 33, 67, 0.24);
 }
 
 .cooperation-section {
@@ -1498,7 +1512,7 @@ h3 {
 
 .shop-section {
   padding: calc(var(--section-space) * 0.5) var(--gutter);
-  background: var(--blue);
+  background: var(--terracotta);
   color: #fffaf8;
 }
 
@@ -1545,7 +1559,7 @@ h3 {
 
 .shop-copy .eyebrow {
   margin-bottom: 0;
-  color: var(--gold);
+  color: var(--lemon);
   font-size: clamp(1.14rem, 1.45vw, 1.33rem);
   text-transform: none;
 }
@@ -2137,15 +2151,17 @@ h3 {
   }
 
   .about-grid {
-    grid-template-columns: minmax(300px, min(38vw, 560px)) minmax(0, 1fr);
+    grid-template-columns: minmax(270px, min(34.2vw, 504px)) minmax(0, 1fr);
     align-items: stretch;
     gap: clamp(38px, 5vw, 76px);
   }
 
   .about-photo {
     position: relative;
+    width: 100%;
     aspect-ratio: auto;
-    min-height: clamp(430px, 31vw, 580px);
+    margin-inline: 0;
+    min-height: clamp(387px, 27.9vw, 522px);
     max-width: 100%;
   }
 
@@ -2288,7 +2304,7 @@ h3 {
   }
 
   .hero-background::after {
-    background: linear-gradient(90deg, rgba(65, 33, 67, 0.9) 0%, rgba(65, 33, 67, 0.74) 54%, rgba(65, 33, 67, 0.24) 100%);
+    background: linear-gradient(90deg, rgba(65, 33, 67, 0.63) 0%, rgba(65, 33, 67, 0.52) 54%, rgba(65, 33, 67, 0.17) 100%);
   }
 
   .hero-background .hero-copy {
@@ -2367,7 +2383,7 @@ h3 {
   }
 
   .booking-section {
-    background: #412143;
+    background: var(--lemon);
   }
 
   .booking-inner {
