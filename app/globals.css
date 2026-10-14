@@ -5,6 +5,7 @@
   --rose: #9b5b54;
   --plum: #41344d;
   --blue: #412143;
+  --lavender: #815488;
   --clay: #c27b73;
   --gold: #fea84e;
   --lemon: #f7ee96;
@@ -632,9 +633,9 @@ h3 {
   position: relative;
   overflow: hidden;
   min-height: clamp(36px, 3.05vw, 48px);
-  border-block: 1px solid rgba(65, 33, 67, 0.14);
-  background: var(--lemon);
-  color: #412143;
+  border-block: 1px solid rgba(255, 250, 248, 0.08);
+  background: var(--lavender);
+  color: rgba(255, 250, 248, 0.64);
   font-family: "Raleway", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -658,7 +659,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: clamp(28px, 4vw, 58px);
-  color: #412143;
+  color: rgba(255, 250, 248, 0.82);
   font-size: clamp(0.72rem, 1vw, 0.92rem);
   font-weight: 850;
   line-height: 1;
@@ -672,7 +673,7 @@ h3 {
   height: 8px;
   flex: 0 0 auto;
   border-radius: 999px;
-  background: #412143;
+  background: var(--gold);
 }
 
 @keyframes marquee-scroll {
@@ -1235,8 +1236,8 @@ h3 {
 
 .booking-section {
   padding: calc(var(--section-space) * 0.18) var(--gutter);
-  background: var(--lemon);
-  color: #412143;
+  background: var(--lavender);
+  color: #fffaf8;
 }
 
 .booking-inner {
@@ -1255,7 +1256,7 @@ h3 {
 
 .booking-inner h2 {
   max-width: min(980px, 100%);
-  color: #412143;
+  color: #fffaf8;
   margin-bottom: clamp(30px, 3vw, 42px);
   font-size: clamp(1.55rem, 2.65vw, 2.42rem);
   line-height: 1.12;
@@ -1265,25 +1266,25 @@ h3 {
 .booking-inner p {
   max-width: 620px;
   margin: 0 0 18px;
-  color: rgba(65, 33, 67, 0.84);
+  color: rgba(255, 250, 248, 0.84);
   font-size: 1.1rem;
 }
 
 .booking-inner small {
   display: block;
   margin-top: 16px;
-  color: rgba(65, 33, 67, 0.72);
+  color: rgba(255, 250, 248, 0.72);
 }
 
 .booking-inner .eyebrow {
-  color: #412143;
+  color: #fffaf8;
 }
 
 .booking-inner .primary-button,
 .booking-inner .primary-button:hover {
-  background: #412143;
-  color: var(--lemon);
-  box-shadow: 0 14px 30px rgba(65, 33, 67, 0.24);
+  background: var(--lemon);
+  color: #412143;
+  box-shadow: 0 14px 30px rgba(247, 238, 150, 0.24);
 }
 
 .cooperation-section {
@@ -1512,7 +1513,7 @@ h3 {
 
 .shop-section {
   padding: calc(var(--section-space) * 0.5) var(--gutter);
-  background: var(--terracotta);
+  background: #412143;
   color: #fffaf8;
 }
 
@@ -1559,7 +1560,7 @@ h3 {
 
 .shop-copy .eyebrow {
   margin-bottom: 0;
-  color: var(--lemon);
+  color: #fffaf8;
   font-size: clamp(1.14rem, 1.45vw, 1.33rem);
   text-transform: none;
 }
@@ -1573,6 +1574,10 @@ h3 {
 .booking-inner .eyebrow {
   font-size: clamp(1.14rem, 1.45vw, 1.33rem);
   text-transform: none;
+}
+
+.booking-inner .primary-button:hover {
+  box-shadow: 0 18px 38px rgba(247, 238, 150, 0.34);
 }
 
 .shop-copy h2 {
@@ -1725,7 +1730,9 @@ h3 {
 .site-footer {
   display: grid;
   gap: 16px;
-  padding: 34px var(--gutter) 92px;
+  align-content: center;
+  align-items: center;
+  padding: 17px var(--gutter) 46px;
   background: #412143;
   color: #fffaf8;
 }
@@ -2217,8 +2224,8 @@ h3 {
 
   .site-footer {
     grid-template-columns: minmax(260px, 0.6fr) 1fr;
-    align-items: start;
-    padding-bottom: 38px;
+    align-items: center;
+    padding-block: 17px 19px;
   }
 }
 
@@ -2383,7 +2390,7 @@ h3 {
   }
 
   .booking-section {
-    background: var(--lemon);
+    background: var(--lavender);
   }
 
   .booking-inner {
